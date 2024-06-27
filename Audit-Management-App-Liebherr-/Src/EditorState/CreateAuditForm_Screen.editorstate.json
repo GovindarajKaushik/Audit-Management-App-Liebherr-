@@ -71,7 +71,7 @@
       "MetaDataIDKey": "",
       "Name": "Attachments_DataCard1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 12,
+      "ParentIndex": 13,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11872,7 +11872,7 @@
       "MetaDataIDKey": "",
       "Name": "InfoButtonCanvas1_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -12502,7 +12502,7 @@
       "MetaDataIDKey": "",
       "Name": "Label3_2",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -20438,7 +20438,7 @@
       "MetaDataIDKey": "",
       "Name": "Status_DataCard1_1",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 13,
+      "ParentIndex": 12,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
