@@ -1,0 +1,286 @@
+Login_Screen As screen:
+    BackgroundImage: ='backgroundImage-Login'
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+    OnVisible: |-
+        =Set(labelView, TextMode.Password);
+        Set(
+            authenticatedUser,
+            LookUp(
+                UserCredentials,
+                User.Email = User().Email
+            )
+        );
+
+    LoginFormContainer As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semibold
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =830
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Width: =816
+        X: =580
+        Y: =116
+        ZIndex: =1
+
+    LoginTitle As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Bold
+        Height: =48
+        Size: =30.92
+        Text: ="Login Form "
+        Width: =254.41
+        X: =826
+        Y: =196
+        ZIndex: =2
+
+    "Icon1 As icon.'3DPrinting'":
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(255, 255, 255, 1)
+        FocusedBorderThickness: =4
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(16, 110, 190, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Printing3D
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =89.96
+        X: =1062
+        Y: =188
+        ZIndex: =3
+
+    TxtInputUsername As text:
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        Default: =User().Email
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =80
+        HintText: ="Enter your Email here"
+        HoverBorderColor: =RGBA(16, 110, 190, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        OnSelect: |
+            =Set(
+                labeltxt,
+                false
+            );
+        PaddingLeft: =45
+        PaddingRight: =7.03
+        PaddingTop: =7.03
+        PressedBorderColor: =RGBA(0, 120, 212, 1)
+        PressedColor: =RGBA(50, 49, 48, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Width: =600
+        X: =689
+        Y: =383
+        ZIndex: =4
+
+    TxtInputPassword As text:
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        Default: =authenticatedUser.Password
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        DisplayMode: =DisplayMode.Disabled
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =80
+        HintText: ="Enter your password here"
+        HoverBorderColor: =RGBA(16, 110, 190, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(255, 255, 255, 1)
+        Mode: =labelView
+        OnSelect: =Set(labelView, TextMode.Password)
+        PaddingLeft: =50
+        PaddingRight: =7.03
+        PaddingTop: =7.03
+        PressedBorderColor: =RGBA(0, 120, 212, 1)
+        PressedColor: =RGBA(50, 49, 48, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Size: =13
+        Width: =600
+        X: =689
+        Y: =507
+        ZIndex: =5
+
+    Person As icon.Person:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(16, 110, 190, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Person
+        PaddingLeft: =2
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =42.17
+        X: =689
+        Y: =404
+        ZIndex: =6
+
+    Lock As icon.Lock:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(16, 110, 190, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Lock
+        PaddingLeft: =5
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =42.17
+        X: =689
+        Y: =530
+        ZIndex: =7
+
+    Person_1 As icon.Person:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =37
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(16, 110, 190, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.View
+        OnSelect: =Set(labelView, TextMode.SingleLine);
+        PaddingLeft: =2
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =42.17
+        X: =1236
+        Y: =530
+        ZIndex: =9
+
+    Login_Button As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(0, 0, 0, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =93
+        HoverBorderColor: =RGBA(214, 221, 224, 1)
+        HoverColor: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(214, 221, 224, 1)
+        OnSelect: |+
+            =Set(
+                authenticatedUser,
+                LookUp(
+                    UserCredentials,
+                    User.Email = User().Email
+                );
+                
+            );
+            
+            If(
+                IsBlankOrError(authenticatedUser),
+                Notify("Incorrect Username or Password"),
+                Set(
+                    isAuthenticated,
+                    true
+                );
+                Set(
+                    userRole,
+                    authenticatedUser.Role.Value
+                );
+                Set(
+                    currentUserEmail,
+                    authenticatedUser.User.Email
+                );
+                // Set user's display name here if it's available in the data source
+                Set(
+                    currentUserName,
+                    authenticatedUser.User.DisplayName
+                );
+                // Set user's picture here if it's available in the data source
+                Set(
+                    currentUserPicutre,
+                    authenticatedUser.User.Picture
+                );
+            
+            
+                Switch(
+                    userRole,
+                    "Admin",
+                    Navigate(Admin_Dashboard_Screen),
+                    "Auditor",
+                    Navigate(Auditor_Screen),
+                    "Auditee",
+                    Navigate(AuditeeStart_Screen),
+                    "Department Manager",
+                    Navigate(DeptManager_Screen),
+                    "Quality Manager",
+                    Navigate(QualityManager_Screen)
+                )
+            );
+            
+            
+            
+        PaddingRight: =7.03
+        PaddingTop: =7.03
+        PressedBorderColor: =RGBA(79, 90, 94, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(79, 90, 94, 1)
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Size: =28
+        Text: ="Login"
+        Width: =527
+        X: =724
+        Y: =723
+        ZIndex: =10
+

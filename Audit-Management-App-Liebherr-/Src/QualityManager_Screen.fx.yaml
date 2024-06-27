@@ -1,0 +1,1187 @@
+QualityManager_Screen As screen:
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Audit_Gallery_3 As gallery.variableTemplateHeightGallery:
+        '#CopilotOverlayLabel': ="Filtered"
+        BorderColor: =RGBA(245, 245, 245, 1)
+        DelayItemLoading: =true
+        Height: =793
+        Items: |
+            =If(authenticatedUser.Role.Value = "Admin", SortByColumns(
+                Filter(
+                    [@Audits],
+                    (StartsWith(Title, Search_TextBox_3.Text) || 
+                    StartsWith(Requestor_or_Auditor.DisplayName, Search_TextBox_3.Text) ||
+                    StartsWith(Attention_to_Auditee.DisplayName, Search_TextBox_3.Text))
+                    &&
+                    (
+                        (AuditStatus_Dropdown_3.Selected.Value = "All")
+                        ||
+                        Status.Value = AuditStatus_Dropdown_3.Selected.Value  // Apply status filter otherwise
+                    )
+                ),
+                "Title"
+            ),
+            SortByColumns(
+                Filter(
+                    [@Audits],
+                    (StartsWith(Title, Search_TextBox_3.Text) || 
+                    StartsWith(Requestor_or_Auditor.DisplayName, Search_TextBox_3.Text) ||
+                    StartsWith(Attention_to_Auditee.DisplayName, Search_TextBox_3.Text))
+                    &&
+                    (
+                        (AuditStatus_Dropdown_3.Selected.Value = "All")
+                        ||
+                        Status.Value = AuditStatus_Dropdown_3.Selected.Value  // Apply status filter otherwise
+                    )
+                    &&
+                    authenticatedUser.User.DisplayName = Reviewed_by_QualityManager.DisplayName  
+                ),
+                "Title"
+            )
+            )
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =401
+        Transition: =Transition.Push
+        Width: =768
+        X: =174
+        Y: =280
+        ZIndex: =1
+
+        Container4_3 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =306
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Width: =596
+            X: =72
+            Y: =44
+            ZIndex: =1
+
+            Container5_3 As groupContainer.manualLayoutContainer:
+                DropShadow: =DropShadow.Regular
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =79
+                RadiusBottomLeft: =5
+                RadiusBottomRight: =5
+                RadiusTopLeft: =5
+                RadiusTopRight: =5
+                Width: =596
+                ZIndex: =1
+
+                Label4_6 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Size: =13
+                    Text: |-
+                        ="Audit No:"
+                    Width: =104
+                    X: =5
+                    Y: =20
+                    ZIndex: =1
+
+                Label5_3 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    Size: =13
+                    Text: =ThisItem.Title
+                    Width: =117
+                    X: =96
+                    Y: =20
+                    ZIndex: =2
+
+                Container6_3 As groupContainer.manualLayoutContainer:
+                    DropShadow: =DropShadow.Light
+                    Fill: |
+                        =Switch(
+                            ThisItem.Status.Value,
+                            "New", RGBA(173, 216, 230, 1),  // Light Blue
+                            "Accepted", RGBA(144, 238, 144, 1),   // Light Green
+                            "Rejected", RGBA(255, 182, 193, 1),   // Light Red
+                            RGBA(0, 0, 0, 0)  // Default color
+                        )
+                    Height: =40
+                    RadiusBottomLeft: =20
+                    RadiusBottomRight: =20
+                    RadiusTopLeft: =20
+                    RadiusTopRight: =20
+                    Width: =239
+                    X: =273
+                    Y: =20
+                    ZIndex: =4
+
+                    Label2_3 As label:
+                        Align: =Align.Center
+                        BorderColor: =RGBA(0, 0, 0, 0)
+                        BorderStyle: =BorderStyle.None
+                        BorderThickness: =2
+                        Color: =RGBA(50, 49, 48, 1)
+                        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                        DisabledColor: =RGBA(161, 159, 157, 1)
+                        FocusedBorderThickness: =4
+                        Font: =Font.'Segoe UI'
+                        FontWeight: =FontWeight.Bold
+                        Height: =Parent.Height
+                        Size: =13
+                        Text: =ThisItem.Status.Value
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                Label4_7 As label:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Bold
+                    Size: =13
+                    Text: |-
+                        ="Status:"
+                    Width: =97
+                    X: =200
+                    Y: =20
+                    ZIndex: =5
+
+                Icon8_11 As icon.Edit:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledBorderColor: =RGBA(245, 245, 245, 1)
+                    DisabledColor: =RGBA(225, 223, 221, 1)
+                    DisabledFill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =4
+                    Height: =35
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(214, 221, 224, 1)
+                    HoverFill: =RGBA(0, 0, 0, 0)
+                    Icon: =Icon.View
+                    OnSelect: |-
+                        =Set(AuditNo, ThisItem.Title);
+                        Navigate(Auditee_Screen, Transition.Push);
+                    PressedBorderColor: =RGBA(0, 0, 0, 0)
+                    PressedColor: =RGBA(16, 110, 190, 1)
+                    PressedFill: =RGBA(0, 0, 0, 0)
+                    Visible: =If(ThisItem.Status.Value = "New" || ThisItem.Status.Value = "Rejected by Auditee" || ThisItem.Status.Value = "Waiting for Auditee" , false, true)
+                    Width: =35
+                    X: =536
+                    Y: =22
+                    ZIndex: =6
+
+            Label11_6 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: =Proper(ThisItem.Requestor_or_Auditor.DisplayName)
+                Width: =214
+                X: =148
+                Y: =108
+                ZIndex: =2
+
+            Image7_6 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: =ThisItem.Requestor_or_Auditor.Picture
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Width: =30
+                X: =107
+                Y: =113
+                ZIndex: =3
+
+            Label8_6 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Size: =13
+                Text: |-
+                    ="Auditor:"
+                Width: =78
+                X: =17
+                Y: =108
+                ZIndex: =4
+
+            Label11_7 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: =Proper(ThisItem.Attention_to_Auditee.DisplayName)
+                Width: =214
+                X: =148
+                Y: =161
+                ZIndex: =5
+
+            Image7_7 As image:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledFill: =RGBA(0, 0, 0, 0)
+                FocusedBorderThickness: =4
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Image: =ThisItem.Attention_to_Auditee.Picture
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                PressedFill: =RGBA(0, 0, 0, 0)
+                RadiusBottomLeft: =50
+                RadiusBottomRight: =50
+                RadiusTopLeft: =50
+                RadiusTopRight: =50
+                Width: =30
+                X: =107
+                Y: =166
+                ZIndex: =6
+
+            Label8_7 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Size: =13
+                Text: |-
+                    ="Auditee:"
+                Width: =90
+                X: =17
+                Y: =161
+                ZIndex: =7
+
+            Label12_3 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                Size: =13
+                Text: |-
+                    ="Date:"
+                Width: =73
+                X: =362
+                Y: =108
+                ZIndex: =8
+
+            Label13_3 As label:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                BorderThickness: =2
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                Size: =13
+                Text: =Text(DateValue(ThisItem.Modified), "dd/mm/yyyy")
+                X: =435
+                Y: =108
+                ZIndex: =9
+
+            Accept_button_4 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                DisabledBorderColor: =RGBA(232, 244, 217, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(187, 221, 140, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(54, 176, 75, 1)
+                OnSelect: =Set(varOpenDialog3, true)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(21, 68, 18, 1)
+                Size: =15
+                Text: ="Accept"
+                Visible: =If(ThisItem.Status.Value = "Accepted by Auditor (review)" || ThisItem.Status.Value = "Rejected by Quality Manager" || ThisItem.Status.Value = "Rejected by Accountable Manager" || ThisItem.Status.Value = "Rejected by Aviation Safety Manager", true, false)
+                X: =47
+                Y: =247
+                ZIndex: =10
+
+            reject_button_2 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                DisabledBorderColor: =RGBA(232, 244, 217, 1)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(250, 155, 112, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(246, 88, 16, 1)
+                OnSelect: =Set(varOpenDialog4, true)
+                PressedBorderColor: =RGBA(255, 255, 255, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(189, 49, 51, 1)
+                Size: =15
+                Text: ="Reject"
+                Visible: =If(ThisItem.Status.Value = "Accepted by Auditor (review)" || ThisItem.Status.Value = "Rejected by Accountable Manager" || ThisItem.Status.Value = "Rejected by Aviation Safety Manager", true, false)
+                X: =388
+                Y: =247
+                ZIndex: =11
+
+        Container9_3 As groupContainer.manualLayoutContainer:
+            DropShadow: =DropShadow.ExtraBold
+            Fill: =RGBA(0, 0, 0, 1)
+            Height: =306
+            RadiusBottomLeft: =40
+            RadiusBottomRight: =40
+            RadiusTopLeft: =40
+            RadiusTopRight: =40
+            Visible: =ThisItem.IsSelected
+            Width: =11
+            X: =50
+            Y: =44
+            ZIndex: =2
+
+    Search_TextBox_3 As text:
+        BorderColor: =RGBA(149, 149, 149, 1)
+        BorderThickness: =2
+        Color: =RGBA(50, 49, 48, 1)
+        Default: =""
+        DelayOutput: =true
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =47
+        HintText: ="Search..."
+        HoverBorderColor: =RGBA(199, 197, 196, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(219, 219, 219, 1)
+        PaddingLeft: =30
+        PaddingRight: =5.00
+        PaddingTop: =3.00
+        PressedBorderColor: =RGBA(199, 197, 196, 1)
+        PressedColor: =RGBA(50, 49, 48, 1)
+        PressedFill: =RGBA(255, 255, 255, 1)
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Size: =15.00
+        Width: =450
+        X: =174
+        Y: =231
+        ZIndex: =2
+
+    AuditStatus_Dropdown_3 As dropdown:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        ChevronBackground: =RGBA(0, 0, 0, 1)
+        ChevronDisabledBackground: =RGBA(242, 242, 241, 0)
+        ChevronDisabledFill: =RGBA(122, 138, 143, 1)
+        ChevronHoverBackground: =RGBA(0, 0, 0, 1)
+        ChevronHoverFill: =RGBA(50, 49, 48, 1)
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Font: =Font.'Segoe UI'
+        Height: =49
+        HoverBorderColor: =RGBA(16, 110, 190, 1)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(214, 221, 224, 1)
+        Items: |-
+            = [
+                { Display: "All", Value: "All" },
+                { Display: "New", Value: "Accepted by Auditor (review)" },
+                { Display: "Accepted", Value: "Accepted by Quality Manager" },
+                { Display: "Rejected", Value: "Rejected by Quality Manager" }
+            ]
+        PaddingBottom: =5
+        PaddingLeft: =12
+        PaddingRight: =5
+        PaddingTop: =5
+        PressedBorderColor: =RGBA(16, 110, 190, 1)
+        PressedColor: =RGBA(0, 0, 0, 1)
+        PressedFill: =RGBA(106, 122, 127, 1)
+        SelectionColor: =RGBA(0, 0, 0, 1)
+        SelectionFill: =RGBA(214, 221, 224, 1)
+        Size: =13
+        Width: =275
+        X: =644
+        Y: =230
+        ZIndex: =3
+
+    Search_Container_3 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(0, 0, 0, 1)
+        Height: =47
+        RadiusBottomLeft: =40
+        RadiusBottomRight: =40
+        RadiusTopLeft: =40
+        RadiusTopRight: =40
+        Width: =67
+        X: =557
+        Y: =231
+        ZIndex: =4
+
+        Search_Icon_3 As icon.Search:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =Parent.Height*.6
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(199, 197, 196, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Search
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =Parent.Width*.5
+            X: =16
+            Y: =12
+            ZIndex: =1
+
+    Refresh_Icon_3 As icon.Reload:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(245, 245, 245, 1)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderThickness: =4
+        Height: =29
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(16, 110, 190, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Icon: =Icon.Reload
+        OnSelect: =Refresh([@Audits])
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(16, 110, 190, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =30
+        X: =1016
+        Y: =240
+        ZIndex: =5
+
+    Sorting_Icon_3 As icon.ArrowsUpDown:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(225, 223, 221, 1)
+        Height: =29
+        Icon: =Icon.Sort
+        OnSelect: |-
+            =UpdateContext({SortDescending1: !SortDescending1})
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        PressedFill: =RGBA(0, 0, 0, 0)
+        TabIndex: =0
+        Tooltip: =If(SortDescending1, "Sort list in reverse alphabetical order", "Sort list in alphabetical order")
+        Width: =30
+        X: =942
+        Y: =240
+        ZIndex: =6
+
+    Label1_7 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(139, 154, 159, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(214, 221, 224, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =39
+        Size: =18
+        Text: |-
+            ="Active Audits:"
+        Width: =204
+        X: =174
+        Y: =179
+        ZIndex: =7
+
+    Label1_8 As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Color: =RGBA(139, 154, 159, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =39
+        Size: =18
+        Text: |-
+            ="Status:"
+        Width: =204
+        X: =644
+        Y: =179
+        ZIndex: =8
+
+    Container1_5 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semibold
+        Height: =90
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width
+        ZIndex: =9
+
+        Image3_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =Parent.Height
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =Liebherr_logo
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =350
+            ZIndex: =1
+
+        Image1_7 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =50
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =currentUserPicutre
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =Parent.Width*.92
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =2
+
+        Label3_7 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: =currentUserName
+            Width: =210
+            X: =Parent.Width*.8
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =3
+
+        Icon3_8 As icon.VerticalLine:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(214, 221, 224, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =Parent.Height*.6
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(214, 221, 224, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.VerticalLine
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            X: =Parent.Width*.77
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =4
+
+        Label6_7 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: ="Help"
+            Width: =63
+            X: =1363
+            Y: =31
+            ZIndex: =5
+
+        "InfoButtonCanvas1_7 As 'Information button'":
+            BasePaletteColor: =RGBA(189, 178, 176, 1)
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.Arial
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontSize: =0
+            Height: =40
+            IconSize: ='InfoButtonCanvas.IconSize'.Large
+            Visible: =true
+            Width: =55
+            X: =1410
+            Y: =31
+            ZIndex: =6
+
+        Button2_13 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(0, 0, 0, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =55
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(79, 90, 94, 1)
+            OnSelect: |-
+                =Set(isAuthenticated, false);
+                Set(currentUserEmail, "");
+                Set(currentUserName, "");
+                Set(currentUserPicutre, "");
+                Set(userRole, "");
+                Set(authenticatedUser, Blank());
+                Navigate(Login_Screen, ScreenTransition.Fade);
+            PaddingLeft: =30
+            PressedBorderColor: =RGBA(0, 0, 0, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(0, 0, 0, 1)
+            Size: =15
+            Text: ="Logout"
+            Width: =219
+            X: =1088
+            Y: =18
+            ZIndex: =7
+
+        Icon8_9 As icon.AddDocument:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(255, 255, 255, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =40
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(122, 138, 143, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.Leave
+            OnSelect: |-
+                =Set(isAuthenticated, false);
+                Set(currentUserEmail, "");
+                Navigate(Login_Screen, ScreenTransition.Fade);
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =40
+            X: =1106
+            Y: =28
+            ZIndex: =8
+
+    Container13 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(0, 0, 0, 0.3)
+        Height: =Parent.Height
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =varOpenDialog3
+        Width: =Parent.Width
+        ZIndex: =10
+
+        Container15 As groupContainer.verticalAutoLayoutContainer:
+            DropShadow: =DropShadow.Semibold
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =500
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            PaddingLeft: =50
+            PaddingTop: =20
+            RadiusBottomLeft: =15
+            RadiusBottomRight: =15
+            RadiusTopLeft: =15
+            RadiusTopRight: =15
+            Visible: =varOpenDialog3
+            Width: =900
+            X: =Parent.Width/2-Self.Width/2
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =1
+
+            TextCanvas1_3 As Text:
+                Align: ='TextCanvas.Align'.Start
+                AlignInContainer: =AlignInContainer.Stretch
+                AutoHeight: =false
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =RGBA(0, 0, 0, 1)
+                FontItalic: =false
+                FontStrikethrough: =false
+                Height: =50
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Size: =22
+                Text: |-
+                    ="Please enter in your remarks: (If applicable)"
+                VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =150
+                Wrap: =true
+                X: =0
+                Y: =0
+                ZIndex: =1
+
+            "RemarksInput_1 As 'Text input'":
+                AlignInContainer: =AlignInContainer.Start
+                Appearance: ="FilledDarker"
+                BasePaletteColor: =
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =
+                Height: =175
+                LayoutMinHeight: =100
+                LayoutMinWidth: =320
+                Mode: ='TextInputCanvas.Mode'.Multiline
+                Placeholder: ="Please enter remarks"
+                Value: =""
+                Width: =800
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+            TextCanvas1_4 As Text:
+                Align: ='TextCanvas.Align'.Start
+                AlignInContainer: =AlignInContainer.Stretch
+                AutoHeight: =false
+                BorderStyle: =""
+                DisplayMode: =DisplayMode.Edit
+                FontColor: =RGBA(0, 0, 0, 1)
+                FontItalic: =false
+                FontStrikethrough: =false
+                Height: =30
+                LayoutMinHeight: =32
+                LayoutMinWidth: =96
+                Size: =22
+                Text: ="Aviation Safety Related"
+                VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+                Weight: ='TextCanvas.Weight'.Semibold
+                Width: =150
+                Wrap: =true
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+            isAviationSafetyRelated As toggleSwitch:
+                AlignInContainer: =AlignInContainer.Start
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                Color: =RGBA(50, 49, 48, 1)
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                FalseFill: =RGBA(96, 94, 92, 1)
+                FalseHoverFill: =RGBA(50, 49, 48, 1)
+                FalseText: ="NO"
+                FocusedBorderThickness: =4
+                Font: =Font.'Segoe UI'
+                HandleFill: =RGBA(255, 255, 255, 1)
+                Height: =30
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                PressedBorderColor: =RGBA(0, 0, 0, 0)
+                Size: =13
+                TrueFill: =RGBA(0, 120, 212, 1)
+                TrueHoverFill: =RGBA(16, 110, 190, 1)
+                TrueText: ="YES"
+                Width: =94
+                ZIndex: =4
+
+            Container17_3 As groupContainer.horizontalAutoLayoutContainer:
+                Height: =100
+                LayoutAlignItems: =LayoutAlignItems.Center
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =50
+                PaddingRight: =50
+                PaddingTop: =50
+                RadiusBottomLeft: =4
+                RadiusBottomRight: =4
+                RadiusTopLeft: =4
+                RadiusTopRight: =4
+                Width: =0
+                ZIndex: =5
+
+                Button4_3 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    Fill: =RGBA(54, 176, 75, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(54, 176, 75, 1)
+                    OnSelect: |-
+                        =If(
+                            !IsBlank(RemarksInput_1.Value),
+                            Patch(
+                                'Audit Remarks',
+                                Defaults('Audit Remarks'),
+                                {
+                                    Title: randomNumber,
+                                    Reviewer: Audit_Gallery_3.Selected.Reviewed_by_QualityManager,
+                                    Remarks: RemarksInput_1.Value,
+                                    From: {
+                                        '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+                                        Id: Audit_Gallery_3.Selected.ID,
+                                        Value: Audit_Gallery_3.Selected.Title
+                                    },
+                                    Role: {Value: "Quality Manager"}
+                                }
+                            )
+                        );
+                        
+                        If(isAviationSafetyRelated.Value = true, Patch(
+                            Audits,
+                            LookUp(
+                                Audits,
+                                ID = Audit_Gallery_3.Selected.ID
+                            ),
+                            {
+                                'Date of Review (Quality Manager)': Now(),
+                                Status: {Value: "Accepted by Quality Manager"},
+                                Reviewed_by_Aviation_Safety_Manager: {
+                                Claims: "i:0#.f|membership|govindaraj.kaushik@liebherr.com",
+                                Department: "Aerospace",
+                                JobTitle: "Internship",
+                                DisplayName: "Kaushik Govindaraj (LSI)",
+                                Email: "Govindaraj.Kaushik@liebherr.com",
+                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Govindaraj.Kaushik@liebherr.com"
+                            },
+                            Reviewed_by_Accountable_Manager: {
+                                Claims: "i:0#.f|membership|govindaraj.kaushik@liebherr.com",
+                                Department: "Aerospace",
+                                JobTitle: "Internship",
+                                DisplayName: "Kaushik Govindaraj (LSI)",
+                                Email: "Govindaraj.Kaushik@liebherr.com",
+                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Govindaraj.Kaushik@liebherr.com"
+                            }
+                            }
+                        ),
+                        Patch(
+                            Audits,
+                            LookUp(
+                                Audits,
+                                ID = Audit_Gallery_3.Selected.ID
+                            ),
+                            {
+                                'Date of Review (Quality Manager)': Now(),
+                                Status: {Value: "Accepted by Quality Manager"},
+                                Reviewed_by_Accountable_Manager: {
+                                Claims: "i:0#.f|membership|govindaraj.kaushik@liebherr.com",
+                                Department: "Aerospace",
+                                JobTitle: "Internship",
+                                DisplayName: "Kaushik Govindaraj (LSI)",
+                                Email: "Govindaraj.Kaushik@liebherr.com",
+                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Govindaraj.Kaushik@liebherr.com"
+                            }
+                            }
+                        );
+                        
+                        );
+                        
+                        // Change this later please
+                         If(isAviationSafetyRelated.Value = true, 'QA-Manager-To-Aviation-Safety-Manager'.Run(true, Audit_Gallery_3.Selected.ID), 'QA-Manager-To-Aviation-Safety-Manager'.Run(false, Audit_Gallery_3.Selected.ID));
+                        
+                        Set(varOpenDialog3, false);
+                        Reset(RemarksInput_1);
+                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(166, 215, 153, 1)
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Size: =15
+                    Text: ="Send"
+                    ZIndex: =1
+
+                Button5_3 As button:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    Fill: =RGBA(0, 0, 0, 1)
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    HoverBorderColor: =RGBA(0, 0, 0, 0)
+                    HoverColor: =RGBA(255, 255, 255, 1)
+                    HoverFill: =RGBA(53, 61, 63, 1)
+                    OnSelect: |-
+                        =Set(varOpenDialog3, false);
+                        Reset(RemarksInput_1);
+                    PressedBorderColor: =RGBA(0, 69, 120, 1)
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(214, 221, 224, 1)
+                    RadiusBottomLeft: =15
+                    RadiusBottomRight: =15
+                    RadiusTopLeft: =15
+                    RadiusTopRight: =15
+                    Size: =15
+                    Text: ="Cancel"
+                    ZIndex: =2
+
+    Container11_3 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(0, 0, 0, 0.3)
+        Height: =1080
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Visible: =varOpenDialog4
+        Width: =1920
+        ZIndex: =11
+
+    Container16_3 As groupContainer.verticalAutoLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =355
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutMode: =LayoutMode.Auto
+        RadiusBottomLeft: =15
+        RadiusBottomRight: =15
+        RadiusTopLeft: =15
+        RadiusTopRight: =15
+        Visible: =varOpenDialog4
+        Width: =800
+        X: =560
+        Y: =Parent.Height/2-Self.Height/2
+        ZIndex: =12
+
+        TextCanvas1_5 As Text:
+            Align: ='TextCanvas.Align'.Start
+            AutoHeight: =false
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontItalic: =false
+            FontStrikethrough: =false
+            Height: =75
+            LayoutMinHeight: =32
+            LayoutMinWidth: =96
+            Size: =22
+            Text: |-
+                ="   Please enter in your remarks:"
+            VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+            Weight: ='TextCanvas.Weight'.Semibold
+            Width: =150
+            Wrap: =true
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        "RemarksInput_2 As 'Text input'":
+            AlignInContainer: =AlignInContainer.Center
+            Appearance: ="FilledDarker"
+            BasePaletteColor: =
+            BorderStyle: =""
+            DisplayMode: =DisplayMode.Edit
+            FontColor: =
+            Height: =175
+            LayoutMinHeight: =100
+            LayoutMinWidth: =320
+            Mode: ='TextInputCanvas.Mode'.Multiline
+            Placeholder: ="Please enter remarks"
+            Value: =""
+            Width: =750
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        Container17_4 As groupContainer.horizontalAutoLayoutContainer:
+            FillPortions: =0
+            Height: =100
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            PaddingBottom: =50
+            PaddingLeft: =50
+            PaddingRight: =50
+            PaddingTop: =50
+            RadiusBottomLeft: =4
+            RadiusBottomRight: =4
+            RadiusTopLeft: =4
+            RadiusTopRight: =4
+            ZIndex: =4
+
+            Button4_4 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(54, 176, 75, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(54, 176, 75, 1)
+                OnSelect: |-
+                    ='Rejected->SendAuditeeEmail'.Run(
+                            RemarksInput_2.Value,
+                            Audit_Gallery.Selected.ID,
+                            Audit_Gallery.Selected.Requestor_or_Auditor.Email
+                        );
+                    
+                    
+                    Set(randomNumber, Concatenate( Left(User().FullName, 2), "-", Text(Now(), "ddmmyy-hhmmss")));
+                        Patch(
+                            'Audit Remarks',
+                            Defaults('Audit Remarks'),
+                            {
+                                Title: randomNumber,
+                                Reviewer: Audit_Gallery.Selected.Reviewed_by_QualityManager,
+                                Remarks: RemarksInput_2.Value,
+                                From: {
+                                    '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
+                                    Id: Audit_Gallery.Selected.ID,
+                                    Value: Audit_Gallery.Selected.Title
+                                },
+                                Role: {Value: "Quality Manager"}
+                            }
+                        );
+                    
+                    Patch(
+                        Audits,
+                        LookUp(Audits, ID = Audit_Gallery.Selected.ID),
+                        {
+                            Status: {Value: "Rejected by Quality Manager"},
+                            'Date of Review (Quality Manager)': Blank()
+                        }
+                    );
+                    
+                    
+                    
+                    
+                    Set(varOpenDialog4, false);
+                    Reset(RemarksInput_2);
+                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(166, 215, 153, 1)
+                RadiusBottomLeft: =15
+                RadiusBottomRight: =15
+                RadiusTopLeft: =15
+                RadiusTopRight: =15
+                Size: =15
+                Text: ="Send"
+                ZIndex: =1
+
+            Button5_4 As button:
+                BorderColor: =RGBA(0, 0, 0, 0)
+                BorderStyle: =BorderStyle.None
+                DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                DisabledColor: =RGBA(161, 159, 157, 1)
+                DisabledFill: =RGBA(242, 242, 241, 0)
+                Fill: =RGBA(0, 0, 0, 1)
+                Font: =Font.'Segoe UI'
+                FontWeight: =FontWeight.Semibold
+                HoverBorderColor: =RGBA(0, 0, 0, 0)
+                HoverColor: =RGBA(255, 255, 255, 1)
+                HoverFill: =RGBA(53, 61, 63, 1)
+                OnSelect: |-
+                    =Set(varOpenDialog4, false);
+                    Reset(RemarksInput_2);
+                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedColor: =RGBA(255, 255, 255, 1)
+                PressedFill: =RGBA(214, 221, 224, 1)
+                RadiusBottomLeft: =15
+                RadiusBottomRight: =15
+                RadiusTopLeft: =15
+                RadiusTopRight: =15
+                Size: =15
+                Text: ="Cancel"
+                ZIndex: =2
+
+    Arrow1_4 As arrow.backArrow:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 1)
+        HoverFill: =RGBA(214, 221, 224, 1)
+        OnSelect: =Navigate(Admin_Dashboard_Screen, Transition.Push);
+        PressedFill: =RGBA(79, 90, 94, 1)
+        Visible: =If(userRole = "Admin", true, false)
+        X: =66
+        Y: =140
+        ZIndex: =13
+

@@ -1,0 +1,1405 @@
+CreateAuditForm_Screen_1 As screen:
+    Fill: =RGBA(248, 248, 248, 1)
+    LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
+
+    Container3_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Semibold
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =Parent.Height*.08
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width*.98
+        X: =Parent.Width/2-Self.Width/2
+        Y: =Parent.Height*.02
+        ZIndex: =1
+
+        Image3_4 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =Parent.Height
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =Liebherr_logo
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            Width: =Parent.Width*.1
+            X: =40
+            ZIndex: =1
+
+        Image1_4 As image:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =50
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Image: =currentUserPicutre
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            RadiusBottomLeft: =50
+            RadiusBottomRight: =50
+            RadiusTopLeft: =50
+            RadiusTopRight: =50
+            Width: =50
+            X: =Parent.Width*.92
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =2
+
+        Label3_4 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: =currentUserName
+            Width: =210
+            X: =Parent.Width*.8
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =3
+
+        Icon3_5 As icon.VerticalLine:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            Color: =RGBA(214, 221, 224, 1)
+            DisabledBorderColor: =RGBA(245, 245, 245, 1)
+            DisabledColor: =RGBA(225, 223, 221, 1)
+            DisabledFill: =RGBA(0, 0, 0, 0)
+            FocusedBorderThickness: =4
+            Height: =Parent.Height*.6
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(214, 221, 224, 1)
+            HoverFill: =RGBA(0, 0, 0, 0)
+            Icon: =Icon.VerticalLine
+            PressedBorderColor: =RGBA(0, 0, 0, 0)
+            PressedColor: =RGBA(16, 110, 190, 1)
+            PressedFill: =RGBA(0, 0, 0, 0)
+            X: =Parent.Width*.77
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =4
+
+        Label6_4 As label:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            BorderThickness: =2
+            Color: =RGBA(50, 49, 48, 1)
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            FocusedBorderThickness: =4
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Bold
+            Size: =13
+            Text: ="Help"
+            Width: =63
+            X: =Parent.Width*.7
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =5
+
+        "InfoButtonCanvas1_4 As 'Information button'":
+            BasePaletteColor: =RGBA(189, 178, 176, 1)
+            DisplayMode: =DisplayMode.Edit
+            Font: =Font.Arial
+            FontColor: =RGBA(0, 0, 0, 1)
+            FontSize: =0
+            Height: =40
+            IconSize: ='InfoButtonCanvas.IconSize'.Large
+            Visible: =true
+            Width: =55
+            X: =Label6_4.X+Label6_4.Width
+            Y: =Parent.Height/2-Self.Height/2
+            ZIndex: =6
+
+    Container7_1 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Regular
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =918
+        RadiusBottomLeft: =10
+        RadiusBottomRight: =10
+        RadiusTopLeft: =10
+        RadiusTopRight: =10
+        Width: =Parent.Width*.98
+        X: =24
+        Y: =Parent.Height*.12
+        ZIndex: =2
+
+        RootCauseAnalysis_Form As form.PowerApps_CoreControls_Form:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DataSource: ='Root Analysis'
+            DefaultMode: =FormMode.New
+            Height: =759
+            NumberOfColumns: =1
+            UseFluentV9Cards: =true
+            Visible: =isRootCause
+            Width: =Parent.Width
+            X: =Parent.Width/2-Self.Width/2
+            Y: =40
+            ZIndex: =2
+
+            Title_DataCard4 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Title"
+                Default: =ThisItem.Title
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Root Analysis'],DataSourceInfo.DisplayName,Title)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@'Root Analysis'], DataSourceInfo.MaxLength, Title)
+                Required: =false
+                Update: =DataCardValue28.Value
+                Width: =1881
+                X: =0
+                Y: =0
+                ZIndex: =3
+
+                DataCardKey28 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue28 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DisplayMode: =Parent.DisplayMode
+                    FontColor: =
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey28.Y + DataCardKey28.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage28 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue28.Y + DataCardValue28.Height
+                    ZIndex: =3
+
+                StarVisible28 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey28.Y
+                    ZIndex: =4
+
+            "'5 Whys_DataCard2' As typedDataCard.fluentV9TextualEditCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="OData__x0035_Whys"
+                Default: =ThisItem.'5 Whys'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Root Analysis'],DataSourceInfo.DisplayName,'5 Whys')
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@'Root Analysis'], DataSourceInfo.MaxLength, '5 Whys')
+                Required: =false
+                Update: =DataCardValue29.Value
+                Width: =1881
+                X: =0
+                Y: =1
+                ZIndex: =3
+
+                DataCardKey29 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue29 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DisplayMode: =Parent.DisplayMode
+                    FontColor: =
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey29.Y + DataCardKey29.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage29 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue29.Y + DataCardValue29.Height
+                    ZIndex: =3
+
+                StarVisible29 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey29.Y
+                    ZIndex: =4
+
+            From_DataCard2 As typedDataCard.fluentV9ComboBoxEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="From"
+                Default: =ThisItem.From
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Root Analysis'],DataSourceInfo.DisplayName,From)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: |-
+                    ={
+                        Id: LookUp(
+                            Audits,
+                            Title = LinkToAudit
+                        ).ID,
+                        Value: LookUp(
+                            Audits,
+                            Title = LinkToAudit
+                        ).Title
+                    }
+                Visible: =false
+                Width: =1881
+                X: =0
+                Y: =2
+                ZIndex: =3
+
+                DataCardKey30 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue30 As Combobox.pcfdataset:
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Appearance: ="FilledDarker"
+                    BorderStyle: =""
+                    DefaultSelectedItems: =LookUp(Audits, Title = LinkToAudit)
+                    DisplayMode: =DisplayMode.Disabled
+                    Height: =32
+                    Items: =Audits
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey30.Y + DataCardKey30.Height + 4
+                    ZIndex: =2
+
+                    Title3 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Title"
+                        FieldName: ="Title"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =1
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =25
+
+                    "'Requirement/ Clause No.2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Requirement/ Clause No."
+                        FieldName: ="Requirement_x002f_ClauseNo_x002e"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =2
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =26
+
+                    "'Section/ Dept2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Section/ Dept"
+                        FieldName: ="Section_x002f_Dept"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =3
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =27
+
+                    "'Issue Date2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Issue Date"
+                        FieldName: ="IssueDate"
+                        FieldType: ="D"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =4
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =28
+
+                    "'Description of Non Conformance/ Finding2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Description of Non Conformance/ Finding"
+                        FieldName: ="DescriptionofNonConformance_x002"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =5
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =29
+
+                    "'Non-Conformance Statement2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Non-Conformance Statement"
+                        FieldName: ="Non_x002d_ConformanceStatement"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =6
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =30
+
+                    Evidence2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Evidence"
+                        FieldName: ="Evidence"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =7
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =31
+
+                    "'Type Of Finding2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Type Of Finding"
+                        FieldName: ="TypeOfFinding"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =8
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =32
+
+                    "'Level of Finding2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Level of Finding"
+                        FieldName: ="LevelofFinding"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =9
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =33
+
+                    "'Completion Date2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Completion Date"
+                        FieldName: ="Completion_x0020_Date"
+                        FieldType: ="D"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =10
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =34
+
+                    "'Risk Index (When Finding is Raised))2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Risk Index (When Finding is Raised))"
+                        FieldName: ="Risk_x0020_Index_x0020__x0028_Wh"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =11
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =35
+
+                    FileName2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="FileName"
+                        FieldName: ="File_x0020_Name"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =12
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =36
+
+                    Requestor_or_Auditor2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Requestor_or_Auditor"
+                        FieldName: ="Requestor_or_Auditor"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =13
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =37
+
+                    Attention_to_Auditee2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Attention_to_Auditee"
+                        FieldName: ="Attention_to_Auditee"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =14
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =38
+
+                    Status2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Status"
+                        FieldName: ="Status"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =15
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =39
+
+                    Approved_by_DeptManager2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Approved_by_DeptManager"
+                        FieldName: ="Approved_by_DeptManager"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =16
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =40
+
+                    "'Risk Index 2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Risk Index "
+                        FieldName: ="RiskIndex"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =17
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =41
+
+                    Attachments2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Attachments"
+                        FieldName: ="{Attachments}"
+                        FieldType: ="r*"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =18
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =42
+
+                ErrorMessage30 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue30.Y + DataCardValue30.Height
+                    ZIndex: =3
+
+                StarVisible30 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =20
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey30.Y
+                    ZIndex: =4
+
+        Form1_2 As form.PowerApps_CoreControls_Form:
+            BorderColor: =RGBA(245, 245, 245, 1)
+            DataSource: =ActionDataSource
+            DefaultMode: =FormMode.New
+            Height: =759
+            NumberOfColumns: =1
+            UseFluentV9Cards: =true
+            Visible: =If(isRootCause, false, true)
+            Width: =Parent.Width
+            X: =Parent.Width/2-Self.Width/2
+            Y: =60
+            ZIndex: =3
+
+            Title_DataCard2_2 As typedDataCard.fluentV9TextualEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="Title"
+                Default: =ThisItem.Title
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Containment Action'],DataSourceInfo.DisplayName,Title)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@'Containment Action'], DataSourceInfo.MaxLength, Title)
+                Required: =false
+                Update: =DataCardValue22_2.Value
+                Width: =1881
+                X: =0
+                Y: =0
+                ZIndex: =2
+
+                DataCardKey22_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue22_2 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DisplayMode: =Parent.DisplayMode
+                    FontColor: =
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey22_2.Y + DataCardKey22_2.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage22_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue22_2.Y + DataCardValue22_2.Height
+                    ZIndex: =3
+
+                StarVisible22_2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey22_2.Y
+                    ZIndex: =4
+
+            "'Action By_DataCard1_2' As typedDataCard.fluentV9TextualEditCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="ActionBy"
+                Default: =ThisItem.ActionBy
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Containment Action'],DataSourceInfo.DisplayName,'Action By')
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                MaxLength: =DataSourceInfo([@'Containment Action'], DataSourceInfo.MaxLength, 'Action By')
+                Required: =false
+                Update: =DataCardValue23_2.Value
+                Width: =1881
+                X: =0
+                Y: =1
+                ZIndex: =2
+
+                DataCardKey23_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue23_2 As 'Text input'":
+                    AccessibleLabel: =Parent.DisplayName
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DisplayMode: =Parent.DisplayMode
+                    FontColor: =
+                    Height: =32
+                    Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                    Required: =Parent.Required
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Value: =Parent.Default
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey23_2.Y + DataCardKey23_2.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage23_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue23_2.Y + DataCardValue23_2.Height
+                    ZIndex: =3
+
+                StarVisible23_2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey23_2.Y
+                    ZIndex: =4
+
+            "'Target Date _DataCard1_2' As typedDataCard.fluentV9DateEditCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="TargetDate"
+                Default: =ThisItem.TargetDate
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Containment Action'],DataSourceInfo.DisplayName,'Target Date ')
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =DataCardValue24_2.SelectedDate
+                Width: =1881
+                X: =0
+                Y: =2
+                ZIndex: =2
+
+                DataCardKey24_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue24_2 As 'Date picker'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DisplayMode: =Parent.DisplayMode
+                    EndDate: =Date(Year(Today())+100, 12, 31)
+                    FontColor: =
+                    Height: =32
+                    SelectedDate: =Parent.Default
+                    StartDate: =Date(1900, 1, 1)
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey24_2.Y + DataCardKey24_2.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage24_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue24_2.Y + DataCardValue24_2.Height
+                    ZIndex: =3
+
+                StarVisible24_2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey24_2.Y
+                    ZIndex: =4
+
+            "'Date of Completion _DataCard1_2' As typedDataCard.fluentV9DateEditCard":
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="DateofCompletion"
+                Default: =ThisItem.DateofCompletion
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Containment Action'],DataSourceInfo.DisplayName,'Date of Completion ')
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =70
+                Required: =false
+                Update: =DataCardValue25_2.SelectedDate
+                Width: =1881
+                X: =0
+                Y: =3
+                ZIndex: =2
+
+                DataCardKey25_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                "DataCardValue25_2 As 'Date picker'":
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Appearance: ="FilledDarker"
+                    BasePaletteColor: =
+                    BorderStyle: =""
+                    DisplayMode: =Parent.DisplayMode
+                    EndDate: =Date(Year(Today())+100, 12, 31)
+                    FontColor: =
+                    Height: =32
+                    SelectedDate: =Parent.Default
+                    StartDate: =Date(1900, 1, 1)
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey25_2.Y + DataCardKey25_2.Height + 4
+                    ZIndex: =2
+
+                ErrorMessage25_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue25_2.Y + DataCardValue25_2.Height
+                    ZIndex: =3
+
+                StarVisible25_2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey25_2.Y
+                    ZIndex: =4
+
+            From_DataCard1_2 As typedDataCard.fluentV9ComboBoxEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="From"
+                Default: =
+                DisplayMode: =DisplayMode.Edit
+                DisplayName: =DataSourceInfo(ActionDataSource,DataSourceInfo.DisplayName,From)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =88
+                Required: =false
+                Update: |-
+                    ={
+                        Id: LookUp(
+                            Audits,
+                            Title = LinkToAudit
+                        ).ID,
+                        Value: LookUp(
+                            Audits,
+                            Title = LinkToAudit
+                        ).Title
+                    }
+                Visible: =false
+                Width: =1881
+                X: =0
+                Y: =4
+                ZIndex: =2
+
+                DataCardKey26_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =22
+                    Text: =Parent.DisplayName
+                    Weight: ='TextCanvas.Weight'.Semibold
+                    Width: =Parent.Width - 48
+                    Wrap: =false
+                    X: =24
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue26_2 As Combobox.pcfdataset:
+                    AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                    Appearance: ="FilledDarker"
+                    BorderStyle: =""
+                    DefaultSelectedItems: =LookUp(Audits, Title = LinkToAudit)
+                    DisplayMode: =Parent.DisplayMode
+                    Height: =32
+                    IsSearchable: =true
+                    Items: =Audits
+                    ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                    Width: =Parent.Width - 48
+                    X: =24
+                    Y: =DataCardKey26_2.Y + DataCardKey26_2.Height + 4
+                    ZIndex: =2
+
+                    Title2_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Title"
+                        FieldName: ="Title"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =1
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =7
+
+                    "'Requirement/ Clause No.1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Requirement/ Clause No."
+                        FieldName: ="Requirement_x002f_ClauseNo_x002e"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =2
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =8
+
+                    "'Section/ Dept1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Section/ Dept"
+                        FieldName: ="Section_x002f_Dept"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =3
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =9
+
+                    "'Issue Date1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Issue Date"
+                        FieldName: ="IssueDate"
+                        FieldType: ="D"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =4
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =10
+
+                    "'Description of Non Conformance/ Finding1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Description of Non Conformance/ Finding"
+                        FieldName: ="DescriptionofNonConformance_x002"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =5
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =11
+
+                    "'Non-Conformance Statement1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Non-Conformance Statement"
+                        FieldName: ="Non_x002d_ConformanceStatement"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =6
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =12
+
+                    Evidence1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Evidence"
+                        FieldName: ="Evidence"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =7
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =13
+
+                    "'Type Of Finding1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Type Of Finding"
+                        FieldName: ="TypeOfFinding"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =8
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =14
+
+                    "'Level of Finding1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Level of Finding"
+                        FieldName: ="LevelofFinding"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =9
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =15
+
+                    "'Completion Date1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Completion Date"
+                        FieldName: ="Completion_x0020_Date"
+                        FieldType: ="D"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =10
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =16
+
+                    "'Risk Index (When Finding is Raised))1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Risk Index (When Finding is Raised))"
+                        FieldName: ="Risk_x0020_Index_x0020__x0028_Wh"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =11
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =17
+
+                    FileName1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="FileName"
+                        FieldName: ="File_x0020_Name"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =12
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =18
+
+                    Requestor_or_Auditor1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Requestor_or_Auditor"
+                        FieldName: ="Requestor_or_Auditor"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =13
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =19
+
+                    Attention_to_Auditee1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Attention_to_Auditee"
+                        FieldName: ="Attention_to_Auditee"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =14
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =20
+
+                    Status1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Status"
+                        FieldName: ="Status"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =15
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =21
+
+                    Approved_by_DeptManager1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Approved_by_DeptManager"
+                        FieldName: ="Approved_by_DeptManager"
+                        FieldType: ="E"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =16
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =22
+
+                    "'Risk Index 1_2' As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn":
+                        FieldDisplayName: ="Risk Index "
+                        FieldName: ="RiskIndex"
+                        FieldType: ="s"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =17
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =23
+
+                    Attachments1_2 As PowerApps_CoreControls_ComboboxCanvasTemplate_dataField.textualColumn:
+                        FieldDisplayName: ="Attachments"
+                        FieldName: ="{Attachments}"
+                        FieldType: ="r*"
+                        FieldVariantName: ="textualColumn"
+                        Height: =100
+                        Order: =18
+                        Width: =100
+                        X: =0
+                        Y: =0
+                        ZIndex: =24
+
+                ErrorMessage26_2 As Text:
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =30
+                    Text: =Parent.Error
+                    Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =Parent.Width - 48
+                    Wrap: =true
+                    X: =24
+                    Y: =DataCardValue26_2.Y + DataCardValue26_2.Height
+                    ZIndex: =3
+
+                StarVisible26_2 As Text:
+                    Align: ='TextCanvas.Align'.Center
+                    BorderStyle: =""
+                    DisplayMode: =DisplayMode.Edit
+                    FontColor: =
+                    Height: =20
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    X: =0
+                    Y: =DataCardKey26_2.Y
+                    ZIndex: =4
+
+            Attachments_DataCard3_2 As typedDataCard.attachmentsEditCard:
+                BorderColor: =RGBA(245, 245, 245, 1)
+                BorderStyle: =BorderStyle.Solid
+                DataField: ="{Attachments}"
+                Default: =ThisItem.'{Attachments}'
+                DisplayMode: =Parent.DisplayMode
+                DisplayName: =DataSourceInfo([@'Containment Action'],DataSourceInfo.DisplayName,Attachments)
+                Fill: =RGBA(0, 0, 0, 0)
+                Height: =403
+                Required: =false
+                Update: =DataCardValue27_2.Attachments
+                Width: =1881
+                X: =0
+                Y: =5
+                ZIndex: =2
+
+                DataCardKey27_2 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =34
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    Wrap: =false
+                    X: =30
+                    Y: =10
+                    ZIndex: =1
+
+                DataCardValue27_2 As attachments:
+                    BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    DisabledFill: =RGBA(242, 242, 241, 0)
+                    DisplayMode: =Parent.DisplayMode
+                    Fill: =RGBA(245, 245, 245, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    HoverColor: =RGBA(50, 49, 48, 1)
+                    HoverFill: =RGBA(245, 245, 245, 1)
+                    IsInDataCard: =true
+                    ItemColor: =RGBA(0, 0, 0, 1)
+                    ItemFill: =RGBA(0, 120, 212, 1)
+                    ItemHoverColor: =RGBA(50, 49, 48, 1)
+                    ItemHoverFill: =RGBA(245, 245, 245, 1)
+                    Items: =Parent.Default
+                    ItemSpacing: =12
+                    NoAttachmentsColor: =RGBA(161, 159, 157, 1)
+                    PaddingBottom: =5
+                    PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                    PaddingRight: =5
+                    PaddingTop: =5
+                    PressedColor: =RGBA(255, 255, 255, 1)
+                    PressedFill: =RGBA(0, 120, 212, 1)
+                    Tooltip: =Parent.DisplayName
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardKey27_2.Y + DataCardKey27_2.Height + 5
+                    ZIndex: =2
+
+                ErrorMessage27_2 As label:
+                    AutoHeight: =true
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(168, 0, 0, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(168, 0, 0, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =10
+                    Live: =Live.Assertive
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =13
+                    Text: =Parent.Error
+                    Visible: =Parent.DisplayMode=DisplayMode.Edit
+                    Width: =Parent.Width - 60
+                    X: =30
+                    Y: =DataCardValue27_2.Y + DataCardValue27_2.Height
+                    ZIndex: =3
+
+                StarVisible27_2 As label:
+                    Align: =Align.Center
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderStyle: =BorderStyle.None
+                    BorderThickness: =2
+                    Color: =RGBA(50, 49, 48, 1)
+                    DisabledBorderColor: =RGBA(0, 0, 0, 0)
+                    DisabledColor: =RGBA(161, 159, 157, 1)
+                    FocusedBorderThickness: =4
+                    Font: =Font.'Segoe UI'
+                    FontWeight: =FontWeight.Semibold
+                    Height: =DataCardKey27_2.Height
+                    PaddingLeft: =0
+                    Size: =13
+                    Text: ="*"
+                    Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                    Width: =30
+                    Wrap: =false
+                    Y: =DataCardKey27_2.Y
+                    ZIndex: =4
+
+    Button2_10 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(0, 120, 212, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =65
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(16, 110, 190, 1)
+        OnSelect: |
+            =// Submit the form to update Form2
+            If(
+                isRootCause,
+                If(
+                    SubmitForm(RootCauseAnalysis_Form),
+                    Notify(
+                        "Root Cause Analysis form submitted successfully!",
+                        NotificationType.Success
+                    ),
+                    Notify(
+                        "Error submitting Root Cause Analysis form",
+                        NotificationType.Error
+                    )
+                ),
+                If(
+                    SubmitForm(Form1_2),
+                    Notify(
+                        "Action submitted successfully!",
+                        NotificationType.Success
+                    ),
+                    Notify(
+                        "Error submitting Form1",
+                        NotificationType.Error
+                    )
+                )
+            );
+            ClearCollect(
+                ActionDataSourceCollection,
+                ActionDataSource
+            );
+            ClearCollect(
+                LookupResult,
+                Filter(
+                    Audits,
+                    Title = AuditNo
+                )
+            );
+            // Check if a matching item was found
+            // Navigate back to the previous screen after updating
+            Back();
+        PressedBorderColor: =RGBA(0, 69, 120, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(16, 110, 190, 1)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =15
+        Text: ="Submit"
+        Width: =312
+        X: =1544
+        Y: =932
+        ZIndex: =3
+
+    Button2_9 As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        DisabledFill: =RGBA(242, 242, 241, 0)
+        Fill: =RGBA(106, 122, 127, 1)
+        Font: =Font.'Segoe UI'
+        FontWeight: =FontWeight.Semibold
+        Height: =65
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =RGBA(16, 110, 190, 1)
+        OnSelect: |
+            =ResetForm(Form1_2);Navigate(Auditee_Screen, Transition.None)
+        PressedBorderColor: =RGBA(0, 69, 120, 1)
+        PressedColor: =RGBA(255, 255, 255, 1)
+        PressedFill: =RGBA(16, 110, 190, 1)
+        RadiusBottomLeft: =5
+        RadiusBottomRight: =5
+        RadiusTopLeft: =5
+        RadiusTopRight: =5
+        Size: =15
+        Text: ="Cancel"
+        Width: =312
+        X: =59
+        Y: =932
+        ZIndex: =4
+
