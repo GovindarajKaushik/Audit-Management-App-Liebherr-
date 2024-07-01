@@ -267,8 +267,8 @@ Admin_Dashboard_Screen As screen:
         Size: =40
         Text: ="Audit Management Admin Dashboard"
         Weight: ='TextCanvas.Weight'.Bold
-        Width: =716
-        X: =602
+        Width: =728
+        X: =588
         Y: =136
         ZIndex: =6
 

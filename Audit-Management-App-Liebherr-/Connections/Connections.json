@@ -16,6 +16,9 @@
     "datasets": {
       "https://liebherr.sharepoint.com/sites/LSIIHGJ": {
         "dataSources": {
+          "Annual_Schedule_QA": {
+            "tableName": "1969db82-8c33-4c1f-bd0c-7ee80347fd37"
+          },
           "Audit Remarks": {
             "tableName": "298f00e5-e8c7-4576-94d2-941514e584a2"
           },
@@ -47,7 +50,8 @@
       "Corrective Action",
       "Correction",
       "Audit Remarks",
-      "Audits"
+      "Audits",
+      "Annual_Schedule_QA"
     ],
     "dependencies": {},
     "dependents": [
