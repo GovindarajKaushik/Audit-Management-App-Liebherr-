@@ -513,8 +513,8 @@
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 Value: =ThisItem.'Audit Scopes / Areas '
-                Width: =320
-                X: =643
+                Width: =headerAuditScopesAreas.Width
+                X: =headerAuditScopesAreas.X
                 Y: =0
                 ZIndex: =7
 
