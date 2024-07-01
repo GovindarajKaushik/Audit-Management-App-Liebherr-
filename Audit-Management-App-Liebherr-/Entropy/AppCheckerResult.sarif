@@ -5128,19 +5128,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.AccessibleLabel"
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.AccessibleLabel",
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen4",
-                "type": "Screen4.MainSectionContainer.Gallery6"
+                "type": "Screen4.MainSectionContainer.Annual_Schedule"
               }
             }
           ],
@@ -5158,19 +5158,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.TabIndex"
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.TabIndex",
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "Screen4",
-                "type": "Screen4.MainSectionContainer.Gallery6"
+                "type": "Screen4.MainSectionContainer.Annual_Schedule"
               }
             }
           ],
@@ -5188,19 +5188,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.InternalAuditRef.AccessibleLabel"
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.InternalAuditRef.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.InternalAuditRef.AccessibleLabel",
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.InternalAuditRef.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen4",
-                "type": "Screen4.MainSectionContainer.Gallery6.InternalAuditRef"
+                "type": "Screen4.MainSectionContainer.Annual_Schedule.InternalAuditRef"
               }
             }
           ],
@@ -5218,19 +5218,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.AuditorComboBox.AccessibleLabel"
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.AuditorComboBox.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.AuditorComboBox.AccessibleLabel",
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.AuditorComboBox.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen4",
-                "type": "Screen4.MainSectionContainer.Gallery6.AuditorComboBox"
+                "type": "Screen4.MainSectionContainer.Annual_Schedule.AuditorComboBox"
               }
             }
           ],
@@ -5248,19 +5248,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.TextInputCanvas4.AccessibleLabel"
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.TextInputCanvas8.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.MainSectionContainer.Gallery6.TextInputCanvas4.AccessibleLabel",
+                  "fullyQualifiedName": "Screen4.MainSectionContainer.Annual_Schedule.TextInputCanvas8.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "Screen4",
-                "type": "Screen4.MainSectionContainer.Gallery6.TextInputCanvas4"
+                "type": "Screen4.MainSectionContainer.Annual_Schedule.TextInputCanvas8"
               }
             }
           ],

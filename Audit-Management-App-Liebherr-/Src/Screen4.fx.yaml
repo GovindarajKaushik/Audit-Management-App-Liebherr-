@@ -466,7 +466,7 @@
                 X: =headerPendingCARClosure.X+headerPendingCARClosure.Width
                 ZIndex: =9
 
-        Gallery6 As gallery.galleryVertical:
+        Annual_Schedule As gallery.galleryVertical:
             BorderColor: =RGBA(245, 245, 245, 1)
             DelayItemLoading: =true
             Items: =colGridData
@@ -478,9 +478,10 @@
             ZIndex: =2
 
             "InternalAuditRef As 'Text input'":
-                DisplayMode: =DisplayMode.Edit
+                DisplayMode: =DisplayMode.View
                 Height: =30
                 Placeholder: ="e.g. LSI-213-23"
+                Value: =ThisItem.Title
                 Width: =headerInternalAuditRef.Width
                 X: =headerInternalAuditRef.X
                 Y: =0
@@ -508,15 +509,14 @@
                     Y: =0
                     ZIndex: =9
 
-            "TextInputCanvas4 As 'Text input'":
+            "TextInputCanvas8 As 'Text input'":
                 DisplayMode: =DisplayMode.Edit
-                Height: |
-                    =40
-                Mode: ='TextInputCanvas.Mode'.Multiline
+                Height: =32
+                Value: =ThisItem.'Audit Scopes / Areas '
                 Width: =320
                 X: =643
                 Y: =0
-                ZIndex: =3
+                ZIndex: =7
 
     Button3 As button:
         BorderColor: =RGBA(0, 0, 0, 0)
