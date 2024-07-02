@@ -1,6 +1,6 @@
-"Screen4 As screen.'autoLayout_HeaderFooter_ver1.0'":
+"AuditManagement_Screen As screen.'autoLayout_HeaderFooter_ver1.0'":
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
-    OnVisible: =
+    OnVisible: =Select(btnLoadData)
 
     Container1_7 As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(12, 59, 94, 1)
