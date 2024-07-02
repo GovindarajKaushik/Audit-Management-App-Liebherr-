@@ -5608,19 +5608,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "Screen4.Button3.OnSelect"
+                  "fullyQualifiedName": "Screen4.btnLoadData.OnSelect"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "Screen4.Button3.OnSelect",
+                  "fullyQualifiedName": "Screen4.btnLoadData.OnSelect",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "OnSelect",
                 "module": "Screen4",
-                "type": "Screen4.Button3"
+                "type": "Screen4.btnLoadData"
               }
             }
           ],
