@@ -3,7 +3,11 @@ App As appinfo:
     Formulas: |-
         =// Set theme colors
         PrimaryColor = If(varAppColorMode = ""
-    OnStart: =
+    OnStart: |-
+        =Set(
+            varGridEdit,
+            false
+        );
     StartScreen: =
     Theme: =PowerAppsTheme
 

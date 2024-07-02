@@ -5549,6 +5549,36 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "App.varGridEdit"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varGridEdit",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varGridEdit",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "App.images"
                 }
               ],

@@ -217,7 +217,9 @@
             ZIndex: =1
 
     MainSectionContainer As groupContainer.verticalAutoLayoutContainer:
-        DropShadow: =DropShadow.Light
+        BorderColor: =RGBA(0, 120, 212, 1)
+        BorderThickness: =1
+        DropShadow: =DropShadow.Semibold
         Height: =800
         LayoutDirection: =LayoutDirection.Vertical
         LayoutMode: =LayoutMode.Auto
