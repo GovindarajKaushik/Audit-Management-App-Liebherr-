@@ -2,7 +2,7 @@
     LoadingSpinnerColor: =RGBA(0, 120, 212, 1)
     OnVisible: =Select(btnLoadData)
 
-    Container1_7 As groupContainer.manualLayoutContainer:
+    headerContainer As groupContainer.manualLayoutContainer:
         BorderColor: =RGBA(12, 59, 94, 1)
         DropShadow: =DropShadow.Semibold
         Fill: =RGBA(12, 59, 94, 1)
@@ -161,7 +161,7 @@
         BorderColor: =RGBA(245, 245, 245, 1)
         DelayItemLoading: =true
         Fill: =RGBA(12, 59, 94, 1)
-        Height: =(Parent.Height - Container1_7.Height * 1)
+        Height: =(Parent.Height - headerContainer.Height * 1)
         Items: =["Annual Schedule", "Audit Scope", "Internal Auditor" ]
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
@@ -170,7 +170,7 @@
         TemplateSize: =80
         Width: =246
         WrapCount: =0
-        Y: =(Parent.Height + Container1_7.Height) / 2 - Self.Height/2
+        Y: =(Parent.Height + headerContainer.Height) / 2 - Self.Height/2
         ZIndex: =1
 
         Title6 As label:
@@ -194,7 +194,7 @@
     Container18 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Light
         Fill: =RGBA(12, 59, 94, 1)
-        Height: =Container1_7.Height
+        Height: =headerContainer.Height
         RadiusBottomLeft: =4
         RadiusBottomRight: =4
         RadiusTopLeft: =4
@@ -217,8 +217,8 @@
             ZIndex: =1
 
     MainSectionContainer As groupContainer.verticalAutoLayoutContainer:
-        BorderColor: =RGBA(0, 120, 212, 1)
-        BorderThickness: =1
+        BorderColor: =RGBA(139, 154, 159, 1)
+        BorderThickness: =2
         DropShadow: =DropShadow.Semibold
         Height: =800
         LayoutDirection: =LayoutDirection.Vertical
@@ -250,13 +250,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -274,13 +274,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -299,13 +299,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -324,13 +324,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -350,13 +350,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -375,13 +375,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -400,13 +400,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -424,13 +424,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -449,13 +449,13 @@
                 DisabledBorderColor: =RGBA(0, 0, 0, 0)
                 DisabledColor: =RGBA(161, 159, 157, 1)
                 DisabledFill: =RGBA(242, 242, 241, 0)
-                Fill: =RGBA(0, 120, 212, 1)
+                Fill: =RGBA(15, 84, 140, 1)
                 Font: =Font.'Segoe UI'
                 FontWeight: =FontWeight.Semibold
                 HoverBorderColor: =RGBA(0, 0, 0, 0)
                 HoverColor: =RGBA(255, 255, 255, 1)
                 HoverFill: =RGBA(16, 110, 190, 1)
-                PressedBorderColor: =RGBA(0, 69, 120, 1)
+                PressedBorderColor: =RGBA(71, 158, 245, 1)
                 PressedColor: =RGBA(255, 255, 255, 1)
                 PressedFill: =RGBA(16, 110, 190, 1)
                 RadiusBottomLeft: =0
@@ -471,11 +471,28 @@
         Annual_Schedule As gallery.galleryVertical:
             BorderColor: =RGBA(245, 245, 245, 1)
             DelayItemLoading: =true
+            DisplayMode: =If(varGridEdit, DisplayMode.Edit, DisplayMode.View)
+            FillPortions: =0
+            Height: =100
             Items: =colGridData
             Layout: =Layout.Vertical
             LayoutMinHeight: =287
             LayoutMinWidth: =320
             LoadingSpinner: =LoadingSpinner.Data
+            OnSelect: |-
+                =Patch(
+                    colGridData,
+                    ThisItem,
+                    {
+                        Title: InternalAuditRef.Value,
+                        Auditor: AuditorComboBox.Selected,
+                        'Audit Scopes / Areas ': AuditScopes.Value,
+                        Conducted: ConductedDate.SelectedDate,
+                        'Report Date': ReportDate.SelectedDate,
+                        'Pending CAR Closure': PendingCARClosure.Value,
+                        'Pending Effectiveness Review': PendingEffectivenessReview.Value
+                    }
+                )
             TemplatePadding: =0
             TemplateSize: =If(Self.Layout = Layout.Horizontal, Min(280, Self.Width - 60), Min(280, Self.Height - 60))
             ZIndex: =2
@@ -487,6 +504,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 Placeholder: ="e.g. LSI-213-23"
                 Value: =ThisItem.Title
                 Width: =headerInternalAuditRef.Width
@@ -503,6 +521,7 @@
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 Items: =Choices(Annual_Schedule_QA.Auditor)
+                OnChange: =Select(Parent)
                 Width: =headerAuditor.Width
                 X: =headerAuditor.X
                 Y: =0
@@ -527,6 +546,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 Value: =ThisItem.'Audit Scopes / Areas '
                 Width: =headerAuditScopesAreas.Width
                 X: =headerAuditScopesAreas.X
@@ -542,6 +562,7 @@
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 Items: =Choices(Annual_Schedule_QA.Month)
+                OnChange: =Select(Parent)
                 Width: =headerMonth.Width
                 X: =headerMonth.X
                 Y: =0
@@ -554,6 +575,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 Value: =ThisItem.'Location/ Personnel to be Audited'
                 Width: =headerLocation.Width
                 X: =headerLocation.X
@@ -567,6 +589,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 SelectedDate: =ThisItem.Conducted
                 Width: =headerConducted.Width
                 X: =headerConducted.X
@@ -580,6 +603,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 SelectedDate: =ThisItem.'Report Date'
                 Width: =headerReportDate.Width
                 X: =headerReportDate.X
@@ -593,6 +617,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 Placeholder: ="e.g. LSI-213-23"
                 Value: =ThisItem.'Pending CAR Closure'
                 Width: =headerPendingCARClosure.Width
@@ -607,6 +632,7 @@
                 BorderThickness: =1
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
+                OnChange: =Select(Parent)
                 Placeholder: ="e.g. LSI-213-23"
                 Value: =ThisItem.'Pending Effectiveness Review'
                 Width: =headerPendingEffectivenessReview.Width
@@ -641,4 +667,47 @@
         X: =316
         Y: =135
         ZIndex: =4
+
+    Container19 As groupContainer.manualLayoutContainer:
+        DropShadow: =DropShadow.Light
+        Height: =114
+        RadiusBottomLeft: =4
+        RadiusBottomRight: =4
+        RadiusTopLeft: =4
+        RadiusTopRight: =4
+        Width: =MainSectionContainer.Width
+        X: =((Parent.Width + Gallery4.Width) / 2 - Self.Width / 2) * 1
+        Y: =headerContainer.Height
+        ZIndex: =5
+
+        Button1 As button:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            DisabledBorderColor: =RGBA(0, 0, 0, 0)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            DisabledFill: =RGBA(242, 242, 241, 0)
+            Fill: =RGBA(15, 108, 189, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =FontWeight.Semibold
+            Height: =50
+            HoverBorderColor: =RGBA(0, 0, 0, 0)
+            HoverColor: =RGBA(255, 255, 255, 1)
+            HoverFill: =RGBA(16, 110, 190, 1)
+            OnSelect: |-
+                =If(varGridEdit, Patch(Annual_Schedule_QA, colGridData));
+                Select(btnLoadData);
+                Set(varGridEdit, !varGridEdit)
+            PressedBorderColor: =RGBA(0, 69, 120, 1)
+            PressedColor: =RGBA(255, 255, 255, 1)
+            PressedFill: =RGBA(16, 110, 190, 1)
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Size: =15
+            Text: =If(varGridEdit, "EXIT GRID VIEW", "EDIT IN GRID VIEW")
+            Width: =250
+            X: =16
+            Y: =32
+            ZIndex: =1
 
