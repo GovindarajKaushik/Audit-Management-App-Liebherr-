@@ -8,6 +8,7 @@ App As appinfo:
             varGridEdit,
             false
         );
+        Set(varNewRecord,Defaults(Annual_Schedule_QA));
     StartScreen: =
     Theme: =PowerAppsTheme
 

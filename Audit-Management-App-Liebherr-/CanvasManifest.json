@@ -146,7 +146,8 @@
     "Admin_Dashboard_Screen",
     "QualityManager_Screen",
     "CreateAuditForm_Ex_Screen",
-    "Screen1",
-    "AuditManagement_Screen"
+    "AuditManagement_Screen",
+    "AnnualSchedule_Screen",
+    "CreateAnnualSchedule_Screen"
   ]
 }
