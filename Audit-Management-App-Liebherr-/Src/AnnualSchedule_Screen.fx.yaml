@@ -241,17 +241,28 @@ AnnualSchedule_Screen As screen:
         Y: =135
         ZIndex: =5
 
-    Table1 As Table.pcfdataset:
-        DisplayMode: =DisplayMode.Edit
-        Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
-        onCellValueChange: =false
-        onFilter: =false
-        onNavigate: =false
-        onRowSelect: =false
-        onSave: =false
-        OnSelect: =false
-        Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
-        X: =560
-        Y: =334
+    Checkbox3 As checkbox:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        CheckboxBorderColor: =RGBA(96, 94, 92, 1)
+        CheckmarkFill: =RGBA(0, 120, 212, 1)
+        Color: =RGBA(50, 49, 48, 1)
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledColor: =RGBA(161, 159, 157, 1)
+        FocusedBorderThickness: =4
+        Font: =Font.'Segoe UI'
+        Height: =52
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =RGBA(50, 49, 48, 1)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedColor: =RGBA(50, 49, 48, 1)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Size: =13
+        Text: ="Option"
+        Width: =178
+        X: =561
+        Y: =346
         ZIndex: =6
 

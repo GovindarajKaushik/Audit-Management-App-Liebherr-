@@ -45,7 +45,7 @@ Auditor_Screen As screen:
             )
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
-        TemplateSize: =401
+        TemplateSize: =372
         Transition: =Transition.Push
         Width: =768
         X: =78

@@ -55,6 +55,20 @@
     "OverridableProperties": {},
     "Version": "2.2.0"
   },
+  "checkbox": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/checkbox",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "checkbox",
+    "OverridableProperties": {},
+    "Version": "2.1.0"
+  },
   "circle": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -376,21 +390,6 @@
     "Name": "slider",
     "OverridableProperties": {},
     "Version": "2.1.0"
-  },
-  "Table": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/powercontrol/PowerAppsOneGrid",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": true,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": false,
-    "LastModifiedTimestamp": "0",
-    "Name": "PowerAppsOneGrid",
-    "OverridableProperties": {},
-    "TemplateDisplayName": "Table",
-    "Version": "1.0.200"
   },
   "text": {
     "CustomGroupControlTemplateName": "",
