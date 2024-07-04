@@ -46,6 +46,7 @@ CreateAnnualSchedule_Screen As screen:
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
+                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -203,10 +204,10 @@ CreateAnnualSchedule_Screen As screen:
             DataField: ="Location_x002f_PersonneltobeAudi"
             Default: =ThisItem.'Location/ Personnel to be Audited'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,Location_x002f_PersonneltobeAudi)
+            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,'Location/ Personnel to be Audited')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =70
-            MaxLength: =DataSourceInfo([@Annual_Schedule_QA], DataSourceInfo.MaxLength, Location_x002f_PersonneltobeAudi)
+            MaxLength: =DataSourceInfo([@Annual_Schedule_QA], DataSourceInfo.MaxLength, 'Location/ Personnel to be Audited')
             Required: =false
             Update: =DataCardValue5.Value
             Width: =484
@@ -231,6 +232,7 @@ CreateAnnualSchedule_Screen As screen:
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
+                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -328,7 +330,7 @@ CreateAnnualSchedule_Screen As screen:
             DataField: ="ReportDate"
             Default: =ThisItem.'Report Date'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,ReportDate)
+            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,'Report Date')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =70
             Required: =false
@@ -390,10 +392,10 @@ CreateAnnualSchedule_Screen As screen:
             DataField: ="PendingCARClosure"
             Default: =ThisItem.'Pending CAR Closure'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,PendingCARClosure)
+            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,'Pending CAR Closure')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =70
-            MaxLength: =DataSourceInfo([@Annual_Schedule_QA], DataSourceInfo.MaxLength, PendingCARClosure)
+            MaxLength: =DataSourceInfo([@Annual_Schedule_QA], DataSourceInfo.MaxLength, 'Pending CAR Closure')
             Required: =false
             Update: =DataCardValue8.Value
             Width: =484
@@ -418,6 +420,7 @@ CreateAnnualSchedule_Screen As screen:
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
+                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -453,10 +456,10 @@ CreateAnnualSchedule_Screen As screen:
             DataField: ="PendingEffectivenessReview"
             Default: =ThisItem.'Pending Effectiveness Review'
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,PendingEffectivenessReview)
+            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,'Pending Effectiveness Review')
             Fill: =RGBA(0, 0, 0, 0)
             Height: =70
-            MaxLength: =DataSourceInfo([@Annual_Schedule_QA], DataSourceInfo.MaxLength, PendingEffectivenessReview)
+            MaxLength: =DataSourceInfo([@Annual_Schedule_QA], DataSourceInfo.MaxLength, 'Pending Effectiveness Review')
             Required: =false
             Update: =DataCardValue9.Value
             Width: =484
@@ -481,6 +484,7 @@ CreateAnnualSchedule_Screen As screen:
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
+                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -516,7 +520,7 @@ CreateAnnualSchedule_Screen As screen:
             DataField: ="{Attachments}"
             Default: =ThisItem.Attachments
             DisplayMode: =Parent.DisplayMode
-            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,'{Attachments}')
+            DisplayName: =DataSourceInfo([@Annual_Schedule_QA],DataSourceInfo.DisplayName,Attachments)
             Fill: =RGBA(0, 0, 0, 0)
             Height: =50
             Required: =false

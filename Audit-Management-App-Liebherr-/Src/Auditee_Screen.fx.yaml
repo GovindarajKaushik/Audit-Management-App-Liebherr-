@@ -121,7 +121,6 @@ Auditee_Screen As screen:
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
-            IconSize: ='InfoButtonCanvas.IconSize'.Large
             Visible: =true
             Width: =55
             X: =1410
@@ -762,6 +761,7 @@ Auditee_Screen As screen:
                     Height: =32
                     Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                     Required: =Parent.Required
+                    TriggerOutput: ="FocusOut"
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48
@@ -835,6 +835,7 @@ Auditee_Screen As screen:
                     Height: =32
                     Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                     Required: =Parent.Required
+                    TriggerOutput: ="FocusOut"
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48
@@ -1181,6 +1182,7 @@ Auditee_Screen As screen:
                     Height: =32
                     Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                     Required: =Parent.Required
+                    TriggerOutput: ="FocusOut"
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48

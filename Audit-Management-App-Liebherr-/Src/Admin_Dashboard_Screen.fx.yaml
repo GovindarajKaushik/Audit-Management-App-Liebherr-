@@ -111,7 +111,6 @@ Admin_Dashboard_Screen As screen:
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
-            IconSize: ='InfoButtonCanvas.IconSize'.Large
             Visible: =true
             Width: =55
             X: =1410

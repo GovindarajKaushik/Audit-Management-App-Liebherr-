@@ -94,7 +94,6 @@
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
-            IconSize: ='InfoButtonCanvas.IconSize'.Large
             Visible: =true
             Width: =55
             X: =1410
@@ -532,6 +531,7 @@
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 OnChange: =Select(Parent)
+                TriggerOutput: ="FocusOut"
                 Value: =ThisItem.'Audit Scopes / Areas '
                 Width: =headerAuditScopesAreas.Width
                 X: =headerAuditScopesAreas.X
@@ -561,6 +561,7 @@
                 DisplayMode: =DisplayMode.Edit
                 Height: =32
                 OnChange: =Select(Parent)
+                TriggerOutput: ="FocusOut"
                 Value: =ThisItem.'Location/ Personnel to be Audited'
                 Width: =headerLocation.Width
                 X: =headerLocation.X
@@ -604,6 +605,7 @@
                 Height: =32
                 OnChange: =Select(Parent)
                 Placeholder: ="e.g. LSI-213-23"
+                TriggerOutput: ="FocusOut"
                 Value: =ThisItem.'Pending CAR Closure'
                 Width: =headerPendingCARClosure.Width
                 X: =headerPendingCARClosure.X
@@ -619,6 +621,7 @@
                 Height: =32
                 OnChange: =Select(Parent)
                 Placeholder: ="e.g. LSI-213-23"
+                TriggerOutput: ="FocusOut"
                 Value: =ThisItem.'Pending Effectiveness Review'
                 Width: =headerPendingEffectivenessReview.Width
                 X: =headerPendingEffectivenessReview.X
@@ -634,6 +637,7 @@
                 Height: =32
                 OnChange: =Select(Parent)
                 Placeholder: ="e.g. LSI-213-23"
+                TriggerOutput: ="FocusOut"
                 Value: =ThisItem.Title
                 Width: =headerInternalAuditRef.Width
                 X: =headerInternalAuditRef.X

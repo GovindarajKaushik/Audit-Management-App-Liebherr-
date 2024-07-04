@@ -267,7 +267,7 @@
     "Name": "PowerApps_CoreControls_InfoButtonCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Information button",
-    "Version": "0.0.30"
+    "Version": "0.0.31"
   },
   "label": {
     "CustomGroupControlTemplateName": "",
@@ -377,6 +377,21 @@
     "OverridableProperties": {},
     "Version": "2.1.0"
   },
+  "Table": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/powercontrol/PowerAppsOneGrid",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": true,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": false,
+    "LastModifiedTimestamp": "0",
+    "Name": "PowerAppsOneGrid",
+    "OverridableProperties": {},
+    "TemplateDisplayName": "Table",
+    "Version": "1.0.200"
+  },
   "text": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -404,7 +419,7 @@
     "Name": "PowerApps_CoreControls_TextCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Text",
-    "Version": "0.0.38"
+    "Version": "0.0.39"
   },
   "Text input": {
     "CustomGroupControlTemplateName": "",
@@ -419,7 +434,7 @@
     "Name": "PowerApps_CoreControls_TextInputCanvas",
     "OverridableProperties": {},
     "TemplateDisplayName": "Text input",
-    "Version": "0.0.38"
+    "Version": "0.0.39"
   },
   "toggleSwitch": {
     "CustomGroupControlTemplateName": "",
