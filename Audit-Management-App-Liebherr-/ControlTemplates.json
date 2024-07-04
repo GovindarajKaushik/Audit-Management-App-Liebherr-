@@ -55,6 +55,20 @@
     "OverridableProperties": {},
     "Version": "2.2.0"
   },
+  "checkbox": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/checkbox",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "checkbox",
+    "OverridableProperties": {},
+    "Version": "2.1.0"
+  },
   "circle": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -448,19 +462,5 @@
     "Name": "typedDataCard",
     "OverridableProperties": {},
     "Version": "1.0.6"
-  },
-  "videoPlayback": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/videoPlayback",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": false,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": true,
-    "LastModifiedTimestamp": "0",
-    "Name": "videoPlayback",
-    "OverridableProperties": {},
-    "Version": "2.4.1"
   }
 }
