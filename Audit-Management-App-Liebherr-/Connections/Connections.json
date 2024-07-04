@@ -173,6 +173,20 @@
     ],
     "id": "43adbf8d-bfb3-447d-a4a7-b181f8596442"
   },
+  "6e5bdbf7-c68c-4dd1-afcb-59caa36ec885": {
+    "connectionRef": {
+      "displayName": "Office 365 Users",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1694/1.0.1694.3752/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users"
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Users"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6e5bdbf7-c68c-4dd1-afcb-59caa36ec885"
+  },
   "83e7aa66-fa53-4c1d-bdbe-df9765e7156f": {
     "appActions": [
       "Run"

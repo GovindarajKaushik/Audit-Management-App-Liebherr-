@@ -9,6 +9,7 @@ App As appinfo:
             false
         );
         Set(varNewRecord,Defaults(Annual_Schedule_QA));
+        Set(varNumberID, 100000);
     StartScreen: =
     Theme: =PowerAppsTheme
 

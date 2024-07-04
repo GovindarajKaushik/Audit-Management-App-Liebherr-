@@ -241,17 +241,16 @@ AnnualSchedule_Screen As screen:
         Y: =135
         ZIndex: =5
 
-    Table1 As Table.pcfdataset:
-        DisplayMode: =DisplayMode.Edit
-        Height: =If(Self.Y + 500 > Parent.Height, Parent.Height - Self.Y, 500)
-        onCellValueChange: =false
-        onFilter: =false
-        onNavigate: =false
-        onRowSelect: =false
-        onSave: =false
-        OnSelect: =false
-        Width: =If(Self.X + 800 > Parent.Width, Parent.Width - Self.X, 800)
-        X: =560
-        Y: =334
+    Video2 As videoPlayback:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        Fill: =RGBA(0, 120, 212, 1)
+        Height: =763
+        Media: |-
+            ="https://www.youtube.com/watch?v=wI6SHGQ9ATg"
+        Width: =1559
+        X: =312
+        Y: =284
         ZIndex: =6
 

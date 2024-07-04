@@ -377,21 +377,6 @@
     "OverridableProperties": {},
     "Version": "2.1.0"
   },
-  "Table": {
-    "CustomGroupControlTemplateName": "",
-    "FirstParty": true,
-    "Id": "http://microsoft.com/appmagic/powercontrol/PowerAppsOneGrid",
-    "IsComponentTemplate": false,
-    "IsCustomGroupControlTemplate": false,
-    "IsPcfControl": true,
-    "IsPremiumPcfControl": false,
-    "IsWidgetTemplate": false,
-    "LastModifiedTimestamp": "0",
-    "Name": "PowerAppsOneGrid",
-    "OverridableProperties": {},
-    "TemplateDisplayName": "Table",
-    "Version": "1.0.200"
-  },
   "text": {
     "CustomGroupControlTemplateName": "",
     "FirstParty": true,
@@ -463,5 +448,19 @@
     "Name": "typedDataCard",
     "OverridableProperties": {},
     "Version": "1.0.6"
+  },
+  "videoPlayback": {
+    "CustomGroupControlTemplateName": "",
+    "FirstParty": true,
+    "Id": "http://microsoft.com/appmagic/videoPlayback",
+    "IsComponentTemplate": false,
+    "IsCustomGroupControlTemplate": false,
+    "IsPcfControl": false,
+    "IsPremiumPcfControl": false,
+    "IsWidgetTemplate": true,
+    "LastModifiedTimestamp": "0",
+    "Name": "videoPlayback",
+    "OverridableProperties": {},
+    "Version": "2.4.1"
   }
 }
