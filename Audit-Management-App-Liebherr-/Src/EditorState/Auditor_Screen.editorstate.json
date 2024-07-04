@@ -10761,14 +10761,6 @@
           "AFDDataSourceName": "",
           "AutoRuleBindingEnabled": false,
           "AutoRuleBindingString": "",
-          "InvariantPropertyName": "IconSize",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "",
           "InvariantPropertyName": "Visible",
           "IsLockable": false,
           "NameMapSourceSchema": "?"
@@ -10806,11 +10798,6 @@
         {
           "Category": "Data",
           "PropertyName": "FontColor",
-          "RuleProviderType": "Unknown"
-        },
-        {
-          "Category": "Data",
-          "PropertyName": "IconSize",
           "RuleProviderType": "Unknown"
         },
         {
@@ -15912,7 +15899,8 @@
         },
         "Value",
         "Appearance",
-        "BorderStyle"
+        "BorderStyle",
+        "TriggerOutput"
       ],
       "DynamicProperties": [
         {
@@ -16020,6 +16008,11 @@
         {
           "Category": "Data",
           "PropertyName": "BorderStyle",
+          "RuleProviderType": "Unknown"
+        },
+        {
+          "Category": "Data",
+          "PropertyName": "TriggerOutput",
           "RuleProviderType": "Unknown"
         },
         {
