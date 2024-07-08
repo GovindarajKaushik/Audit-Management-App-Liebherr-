@@ -111,6 +111,7 @@ AuditeeStart_Screen As screen:
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
+            IconSize: ="Medium"
             Visible: =true
             Width: =55
             X: =1410
@@ -586,7 +587,7 @@ AuditeeStart_Screen As screen:
                 PressedFill: =RGBA(72, 163, 62, 1)
                 Size: =15
                 Text: ="Submit"
-                Visible: =If(ThisItem.Status.Value = "Accepted by Auditee" || ThisItem.Status.Value = "Rejected by Dept. Manager" || ThisItem.Status.Value = "Rejected by Auditor (review)" || authenticatedUser.Role.Value = "Admin", true, false)
+                Visible: =If(ThisItem.Status.Value = "Accepted by Auditee" || ThisItem.Status.Value = "Rejected by Dept. Manager" || ThisItem.Status.Value = "Rejected by Auditor (review)" || authenticatedUser.Role.Value = "Admin" || ThisItem.Status.Value = "Rejected by Quality Manager", true, false)
                 X: =42
                 Y: =235
                 ZIndex: =12
@@ -889,6 +890,7 @@ AuditeeStart_Screen As screen:
             Appearance: ="FilledDarker"
             BasePaletteColor: =
             BorderStyle: =""
+            DelayOutput: =false
             DisplayMode: =DisplayMode.Edit
             FontColor: =
             Height: =40
@@ -896,7 +898,6 @@ AuditeeStart_Screen As screen:
             LayoutMinWidth: =320
             Placeholder: ="Please enter Risk Index"
             Required: =true
-            TriggerOutput: ="FocusOut"
             Value: =Audit_Gallery_1.Selected.'Risk Index '
             Width: =780
             X: =0
@@ -986,6 +987,14 @@ AuditeeStart_Screen As screen:
                 OnSelect: |-
                     =Set(submissionStatus, AuditeeSubmission.Run(Audit_Gallery_1.Selected.ID, true).status);
                     
+                    If(Audit_Gallery_1.Selected.Status.Value = "Rejected by Quality Manager", Set(submissionStatus, "This Audit is a resubmission"));
+                    If(submissionStatus = "This Audit is a resubmission", 
+                    Patch(
+                                    Audits,
+                                    LookUp(Audits, Title = Audit_Gallery_1.Selected.Title),
+                                    { Status: { Value: "Waiting for Dept. Manager" } }
+                                );
+                    );
                     
                     
                     If(

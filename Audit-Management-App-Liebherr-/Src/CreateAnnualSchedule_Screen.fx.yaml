@@ -42,11 +42,11 @@ CreateAnnualSchedule_Screen As screen:
 
             "DataCardValue2 As 'Text input'":
                 AccessibleLabel: =Parent.DisplayName
+                DelayOutput: =false
                 DisplayMode: =Parent.DisplayMode
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
-                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -228,11 +228,11 @@ CreateAnnualSchedule_Screen As screen:
 
             "DataCardValue5 As 'Text input'":
                 AccessibleLabel: =Parent.DisplayName
+                DelayOutput: =false
                 DisplayMode: =Parent.DisplayMode
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
-                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -416,11 +416,11 @@ CreateAnnualSchedule_Screen As screen:
 
             "DataCardValue8 As 'Text input'":
                 AccessibleLabel: =Parent.DisplayName
+                DelayOutput: =false
                 DisplayMode: =Parent.DisplayMode
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
-                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48
@@ -480,11 +480,11 @@ CreateAnnualSchedule_Screen As screen:
 
             "DataCardValue9 As 'Text input'":
                 AccessibleLabel: =Parent.DisplayName
+                DelayOutput: =false
                 DisplayMode: =Parent.DisplayMode
                 Height: =32
                 Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                 Required: =Parent.Required
-                TriggerOutput: ="FocusOut"
                 ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                 Value: =Parent.Default
                 Width: =Parent.Width - 48

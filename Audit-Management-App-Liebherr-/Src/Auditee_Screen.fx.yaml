@@ -121,6 +121,7 @@ Auditee_Screen As screen:
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
+            IconSize: ="Medium"
             Visible: =true
             Width: =55
             X: =1410
@@ -195,7 +196,7 @@ Auditee_Screen As screen:
         TemplateSize: =116
         Transition: =Transition.Pop
         Visible: =Rest
-        Width: =1055
+        Width: =887
         X: =24
         Y: =316
         ZIndex: =1
@@ -211,6 +212,7 @@ Auditee_Screen As screen:
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
+            Size: =18
             Text: =ThisItem.Title
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 86
@@ -229,7 +231,7 @@ Auditee_Screen As screen:
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
+            Size: =15
             Text: =ThisItem.ActionBy
             VerticalAlign: =VerticalAlign.Top
             Width: =Title10.Width
@@ -248,7 +250,6 @@ Auditee_Screen As screen:
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
-            Size: =12
             Text: =ThisItem.TargetDate
             VerticalAlign: =VerticalAlign.Top
             Width: =Title10.Width
@@ -301,7 +302,7 @@ Auditee_Screen As screen:
             Width: =4
             ZIndex: =6
 
-    "Gallery5 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver5.0'":
+    "Gallery5 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver5.0'":
         '#CopilotOverlayLabel': ="Filtered"
         BorderColor: =RGBA(245, 245, 245, 1)
         DelayItemLoading: =true
@@ -310,15 +311,15 @@ Auditee_Screen As screen:
         Layout: =Layout.Vertical
         LoadingSpinner: =LoadingSpinner.Data
         TemplatePadding: =0
-        TemplateSize: =90
+        TemplateSize: =116
         Transition: =Transition.Pop
         Visible: =RCAGroup
-        Width: =1051
+        Width: =883
         X: =28
         Y: =316
         ZIndex: =1
 
-        Title13 As label:
+        Title2 As label:
             Color: =RGBA(50, 49, 48, 1)
             DisabledColor: =RGBA(161, 159, 157, 1)
             Font: =Font.'Segoe UI'
@@ -329,14 +330,14 @@ Auditee_Screen As screen:
             PaddingLeft: =12
             PaddingRight: =0
             PaddingTop: =0
-            Text: =ThisItem.Title
+            Text: =ThisItem.'5 Whys'
             VerticalAlign: =VerticalAlign.Top
             Width: =Parent.TemplateWidth - 86
             X: =16
-            Y: =(Parent.TemplateHeight - (Self.Size * 1.8 + Subtitle9.Size * 1.8)) / 2
+            Y: =(Parent.TemplateHeight - (Self.Size*1.8 + Subtitle2.Size*1.8 + 2 + Body1.Size*1.8)) / 2
             ZIndex: =1
 
-        Subtitle9 As label:
+        Subtitle2 As label:
             Color: =RGBA(96, 94, 92, 1)
             DisabledColor: =RGBA(161, 159, 157, 1)
             Font: =Font.'Segoe UI'
@@ -348,14 +349,33 @@ Auditee_Screen As screen:
             PaddingRight: =0
             PaddingTop: =0
             Size: =12
-            Text: =ThisItem.'5 Whys'
+            Text: =ThisItem.From.Value
             VerticalAlign: =VerticalAlign.Top
-            Width: =Title13.Width
-            X: =Title13.X
-            Y: =Title13.Y + Title13.Height
+            Width: =Title2.Width
+            X: =Title2.X
+            Y: =Title2.Y + Title2.Height
             ZIndex: =2
 
-        NextArrow12 As icon.ChevronRight:
+        Body1 As label:
+            Color: =RGBA(96, 94, 92, 1)
+            DisabledColor: =RGBA(161, 159, 157, 1)
+            Font: =Font.'Segoe UI'
+            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =12
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =12
+            Text: =ThisItem.Created
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2.Width
+            X: =Title2.X
+            Y: =Subtitle2.Y + Subtitle2.Height
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
             AccessibleLabel: =Self.Tooltip
             BorderColor: =RGBA(0, 0, 0, 0)
             Color: =RGBA(166, 166, 166, 1)
@@ -363,42 +383,57 @@ Auditee_Screen As screen:
             DisabledColor: =RGBA(225, 223, 221, 1)
             DisabledFill: =RGBA(0, 0, 0, 0)
             FocusedBorderThickness: =4
-            Height: =50
+            Height: =40
             HoverBorderColor: =RGBA(0, 0, 0, 0)
-            HoverColor: =RGBA(16, 110, 190, 1)
+            HoverColor: =RGBA(215, 58, 60, 1)
             HoverFill: =RGBA(0, 0, 0, 0)
-            Icon: =Icon.ChevronRight
-            OnSelect: =Select(Parent)
-            PaddingBottom: =16
-            PaddingLeft: =16
-            PaddingRight: =16
-            PaddingTop: =16
+            Icon: =Icon.Trash
+            OnSelect: |-
+                =If(
+                    !IsEmpty(
+                        Remove(
+                            'Root Analysis',
+                            LookUp(
+                                'Root Analysis',
+                                '5 Whys' = ThisItem.'5 Whys'
+                            )
+                        )
+                    ),
+                    Notify(
+                        "Item successfully deleted",
+                        NotificationType.Success
+                    ),
+                    Notify(
+                        "Error deleting item",
+                        NotificationType.Error
+                    )
+                )
             PressedBorderColor: =RGBA(0, 0, 0, 0)
             PressedColor: =RGBA(16, 110, 190, 1)
             PressedFill: =RGBA(0, 0, 0, 0)
             Tooltip: ="View item details"
-            Width: =50
+            Width: =40
             X: =Parent.TemplateWidth - Self.Width - 12
             Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
-            ZIndex: =3
+            ZIndex: =4
 
-        Separator12 As rectangle:
+        Separator2 As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(255, 255, 255, 1)
             Height: =8
             OnSelect: =Select(Parent)
             Width: =Parent.TemplateWidth
             Y: =Parent.TemplateHeight - Self.Height
-            ZIndex: =4
+            ZIndex: =5
 
-        Rectangle13 As rectangle:
+        Rectangle2 As rectangle:
             BorderColor: =RGBA(0, 0, 0, 0)
             Fill: =RGBA(255, 191, 0, 1)
-            Height: =Parent.TemplateHeight - Separator12.Height
+            Height: =Parent.TemplateHeight - Separator2.Height
             OnSelect: =Select(Parent)
             Visible: =ThisItem.IsSelected
             Width: =4
-            ZIndex: =5
+            ZIndex: =6
 
     Container8 As groupContainer.manualLayoutContainer:
         DropShadow: =DropShadow.Regular
@@ -412,7 +447,7 @@ Auditee_Screen As screen:
         Y: =187
         ZIndex: =5
 
-        Button3_1 As button:
+        ContainmentAction_Btn As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -427,8 +462,7 @@ Auditee_Screen As screen:
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(219, 195, 0, 1)
             OnSelect: |-
-                =
-                Set(ActionDataSource, 'Containment Action');
+                =Set(ActionDataSource, 'Containment Action');
                 Set(ChangeForm, true);
                 Set(RCAForm, false);
                 Set(Rest, true);
@@ -436,10 +470,18 @@ Auditee_Screen As screen:
                 
                 
                 // This is for button styling
+                // Containment Action Btn
                 Set(CAButton, DisplayMode.Disabled);
+                Set(CA_Active, true);
+                // Root Cause Analysis Btn
                 Set(RCAButton, DisplayMode.Edit);
+                Set(RCA_Active, false);
+                // Correction Action Btn
                 Set(COButton,  DisplayMode.Edit);
+                Set(CO_Active, false);
+                // Corrective Action Btn
                 Set(CRAButton,  DisplayMode.Edit);
+                Set(CRA_Active, false);
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(147, 130, 0, 1)
@@ -454,7 +496,7 @@ Auditee_Screen As screen:
             Y: =Parent.Height/2-Self.Height/2
             ZIndex: =1
 
-        Button3_2 As button:
+        RootCauseAnalysis_Btn As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -468,7 +510,7 @@ Auditee_Screen As screen:
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(219, 195, 0, 1)
-            OnSelect: |-
+            OnSelect: |+
                 =Set(ActionDataSource, 'Root Analysis');
                 Set(ChangeForm, false);
                 Set(RCAForm, true);
@@ -476,10 +518,21 @@ Auditee_Screen As screen:
                 Set(RCAGroup, true);
                 
                 // For button styling
+                // Containment Action Btn
                 Set(CAButton, DisplayMode.Edit);
+                Set(CA_Active, false);
+                // Root Cause Analysis Btn
                 Set(RCAButton, DisplayMode.Disabled);
+                Set(RCA_Active, true);
+                // Correction Action Btn
                 Set(COButton,  DisplayMode.Edit);
+                Set(CO_Active, false);
+                // Corrective Action Btn
                 Set(CRAButton,  DisplayMode.Edit);
+                Set(CRA_Active, false);
+                
+                
+                
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(147, 130, 0, 1)
@@ -494,7 +547,7 @@ Auditee_Screen As screen:
             Y: =Parent.Height/2-Self.Height/2
             ZIndex: =2
 
-        Button3_3 As button:
+        Correction_Btn As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -508,7 +561,7 @@ Auditee_Screen As screen:
             HoverBorderColor: =RGBA(0, 0, 0, 0)
             HoverColor: =RGBA(255, 255, 255, 1)
             HoverFill: =RGBA(219, 195, 0, 1)
-            OnSelect: |-
+            OnSelect: |+
                 =Set(ActionDataSource, Correction);
                 Set(ChangeForm, true);
                 Set(RCAForm, false);
@@ -516,10 +569,22 @@ Auditee_Screen As screen:
                 Set(RCAGroup, false);
                 
                 // For button styling
+                // Containment Action Btn
                 Set(CAButton, DisplayMode.Edit);
+                Set(CA_Active, false);
+                // Root Cause Analysis Btn
                 Set(RCAButton, DisplayMode.Edit);
+                Set(RCA_Active, false);
+                // Correction Action Btn
                 Set(COButton,  DisplayMode.Disabled);
+                Set(CO_Active, true);
+                // Corrective Action Btn
                 Set(CRAButton,  DisplayMode.Edit);
+                Set(CRA_Active, false);
+                
+                
+                
+                
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(147, 130, 0, 1)
@@ -534,7 +599,7 @@ Auditee_Screen As screen:
             Y: =Parent.Height/2-Self.Height/2
             ZIndex: =3
 
-        Button3_4 As button:
+        CorrectiveAction_Btn As button:
             BorderColor: =RGBA(0, 0, 0, 0)
             BorderStyle: =BorderStyle.None
             DisabledBorderColor: =RGBA(0, 0, 0, 0)
@@ -556,10 +621,18 @@ Auditee_Screen As screen:
                 Set(RCAGroup, false);
                 
                 // For button styling
+                // Corrective Action Btn
                 Set(CAButton, DisplayMode.Edit);
+                Set(CA_Active, false);
+                // Root Cause Analysis Btn
                 Set(RCAButton, DisplayMode.Edit);
+                Set(RCA_Active, false);
+                // Correction Action Btn
                 Set(COButton,  DisplayMode.Edit);
+                Set(CO_Active, false);
+                // Corrective Action Btn
                 Set(CRAButton,  DisplayMode.Disabled);
+                Set(CRA_Active, true);
             PressedBorderColor: =RGBA(255, 255, 255, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(147, 130, 0, 1)
@@ -610,6 +683,9 @@ Auditee_Screen As screen:
                 =NewForm(Form1_2);
                 NewForm(RootCauseAnalysis_Form);
                 Set(LinkToAudit, Audit_Gallery_1.Selected.Title);
+                Set(LinkToAuditID, Audit_Gallery_1.Selected.ID);
+                Set(varNum, 1);
+                If(RCAForm = true, ClearCollect(RCA, {NumberOfItems: varNum, ID: varNumberID2, Why: "Default", FromID: Audit_Gallery_1.Selected.ID, FromTitle: Audit_Gallery_1.Selected.Title}), Clear(RCA));
                 Navigate(CreateAuditForm_Screen_1, Transition.None);
                 
                 If(
@@ -618,14 +694,14 @@ Auditee_Screen As screen:
                     NewForm(RootCauseAnalysis_Form),
                     Set(isRootCause, false),
                     NewForm(Form1_2);
-                )
+                );
             PaddingLeft: =15
             PressedBorderColor: =RGBA(0, 0, 0, 1)
             PressedColor: =RGBA(255, 255, 255, 1)
             PressedFill: =RGBA(0, 0, 0, 1)
             Size: =15
             Text: ="Submit Response"
-            Visible: =If(userRole = "Auditee" || userRole = "Auditor" || authenticatedUser.Role.Value = "Admin", true, false)
+            Visible: =If(userRole = "Auditee" || userRole = "Auditor" || authenticatedUser.Role.Value = "Admin" || authenticatedUser.Role.Value = "Department Manager", true, false)
             Width: =270
             X: =1107
             Y: =Parent.Height/2-Self.Height/2
@@ -671,7 +747,7 @@ Auditee_Screen As screen:
             PressedFill: =RGBA(0, 0, 0, 1)
             Size: =15
             Text: ="Update Response"
-            Visible: =If(userRole = "Auditee" || userRole = "Auditor" || authenticatedUser.Role.Value = "Admin", true, false)
+            Visible: =If(userRole = "Auditee" || userRole = "Auditor" || authenticatedUser.Role.Value = "Admin" || authenticatedUser.Role.Value = "Department Manager", true, false)
             Width: =270
             X: =1558
             Y: =20
@@ -704,8 +780,8 @@ Auditee_Screen As screen:
         RadiusBottomRight: =15
         RadiusTopLeft: =15
         RadiusTopRight: =15
-        Width: =775
-        X: =1115
+        Width: =979
+        X: =911
         Y: =316
         ZIndex: =6
 
@@ -729,11 +805,11 @@ Auditee_Screen As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Correction],DataSourceInfo.DisplayName,Title)
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =70
+                Height: =100
                 MaxLength: =DataSourceInfo([@Correction], DataSourceInfo.MaxLength, Title)
                 Required: =false
                 Update: =DataCardValue68.Value
-                Width: =775
+                Width: =979
                 X: =0
                 Y: =0
                 ZIndex: =2
@@ -742,13 +818,15 @@ Auditee_Screen As screen:
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     FontColor: =
-                    Height: =22
-                    Text: =Parent.DisplayName
+                    Height: =30
+                    PaddingBottom: =2
+                    Size: =20
+                    Text: =If(CA_Active = true, "Containment Action", If(CO_Active, "Correction Action", "Corrective Action"))
                     Weight: ='TextCanvas.Weight'.Semibold
                     Width: =Parent.Width - 48
                     Wrap: =false
                     X: =24
-                    Y: =10
+                    Y: =0
                     ZIndex: =1
 
                 "DataCardValue68 As 'Text input'":
@@ -756,17 +834,18 @@ Auditee_Screen As screen:
                     Appearance: ="FilledDarker"
                     BasePaletteColor: =
                     BorderStyle: =""
+                    DelayOutput: =false
                     DisplayMode: =Parent.DisplayMode
                     FontColor: =
+                    FontSize: =20
                     Height: =32
                     Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                     Required: =Parent.Required
-                    TriggerOutput: ="FocusOut"
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48
                     X: =24
-                    Y: =DataCardKey68.Y + DataCardKey68.Height + 4
+                    Y: =40
                     ZIndex: =2
 
                 ErrorMessage68 As Text:
@@ -803,11 +882,11 @@ Auditee_Screen As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Correction],DataSourceInfo.DisplayName,'Action By')
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =70
+                Height: =100
                 MaxLength: =DataSourceInfo([@Correction], DataSourceInfo.MaxLength, 'Action By')
                 Required: =false
                 Update: =DataCardValue69.Value
-                Width: =775
+                Width: =979
                 X: =0
                 Y: =1
                 ZIndex: =2
@@ -816,7 +895,9 @@ Auditee_Screen As screen:
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     FontColor: =
-                    Height: =22
+                    Height: =28
+                    PaddingBottom: =2
+                    Size: =20
                     Text: =Parent.DisplayName
                     Weight: ='TextCanvas.Weight'.Semibold
                     Width: =Parent.Width - 48
@@ -830,17 +911,18 @@ Auditee_Screen As screen:
                     Appearance: ="FilledDarker"
                     BasePaletteColor: =
                     BorderStyle: =""
+                    DelayOutput: =false
                     DisplayMode: =Parent.DisplayMode
                     FontColor: =
+                    FontSize: =20
                     Height: =32
                     Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                     Required: =Parent.Required
-                    TriggerOutput: ="FocusOut"
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48
                     X: =24
-                    Y: =DataCardKey69.Y + DataCardKey69.Height + 4
+                    Y: =50
                     ZIndex: =2
 
                 ErrorMessage69 As Text:
@@ -877,10 +959,10 @@ Auditee_Screen As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Correction],DataSourceInfo.DisplayName,'Target Date ')
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =70
+                Height: =100
                 Required: =false
                 Update: =DataCardValue70.SelectedDate
-                Width: =775
+                Width: =979
                 X: =0
                 Y: =2
                 ZIndex: =2
@@ -889,7 +971,8 @@ Auditee_Screen As screen:
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     FontColor: =
-                    Height: =22
+                    Height: =30
+                    Size: =20
                     Text: =Parent.DisplayName
                     Weight: ='TextCanvas.Weight'.Semibold
                     Width: =Parent.Width - 48
@@ -906,13 +989,15 @@ Auditee_Screen As screen:
                     DisplayMode: =Parent.DisplayMode
                     EndDate: =Date(Year(Today())+100, 12, 31)
                     FontColor: =
+                    FontSize: =20
                     Height: =32
                     SelectedDate: =Parent.Default
                     StartDate: =Date(1900, 1, 1)
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Width: =Parent.Width - 48
                     X: =24
-                    Y: =DataCardKey70.Y + DataCardKey70.Height + 4
+                    Y: |
+                        =50
                     ZIndex: =2
 
                 ErrorMessage70 As Text:
@@ -949,10 +1034,10 @@ Auditee_Screen As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Correction],DataSourceInfo.DisplayName,'Date of Completion ')
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =70
+                Height: =109
                 Required: =false
                 Update: =DataCardValue71.SelectedDate
-                Width: =775
+                Width: =979
                 X: =0
                 Y: =3
                 ZIndex: =2
@@ -961,7 +1046,8 @@ Auditee_Screen As screen:
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     FontColor: =
-                    Height: =22
+                    Height: =30
+                    Size: =20
                     Text: =Parent.DisplayName
                     Weight: ='TextCanvas.Weight'.Semibold
                     Width: =Parent.Width - 48
@@ -978,13 +1064,14 @@ Auditee_Screen As screen:
                     DisplayMode: =Parent.DisplayMode
                     EndDate: =Date(Year(Today())+100, 12, 31)
                     FontColor: =
+                    FontSize: =20
                     Height: =32
                     SelectedDate: =Parent.Default
                     StartDate: =Date(1900, 1, 1)
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Width: =Parent.Width - 48
                     X: =24
-                    Y: =DataCardKey71.Y + DataCardKey71.Height + 4
+                    Y: =50
                     ZIndex: =2
 
                 ErrorMessage71 As Text:
@@ -1021,10 +1108,11 @@ Auditee_Screen As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@Correction],DataSourceInfo.DisplayName,Attachments)
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =50
+                Height: =249
                 Required: =false
                 Update: =DataCardValue73.Attachments
-                Width: =775
+                Width: =979
+                WidthFit: =false
                 X: =0
                 Y: =4
                 ZIndex: =2
@@ -1042,7 +1130,7 @@ Auditee_Screen As screen:
                     FontWeight: =FontWeight.Semibold
                     Height: =34
                     PaddingLeft: =0
-                    Size: =13
+                    Size: =20
                     Text: =Parent.DisplayName
                     Width: =Parent.Width - 60
                     Wrap: =false
@@ -1062,6 +1150,7 @@ Auditee_Screen As screen:
                     Fill: =RGBA(245, 245, 245, 1)
                     FocusedBorderThickness: =4
                     Font: =Font.'Segoe UI'
+                    Height: =177
                     HoverColor: =RGBA(50, 49, 48, 1)
                     HoverFill: =RGBA(245, 245, 245, 1)
                     IsInDataCard: =true
@@ -1150,11 +1239,11 @@ Auditee_Screen As screen:
                 DisplayMode: =Parent.DisplayMode
                 DisplayName: =DataSourceInfo([@'Root Analysis'],DataSourceInfo.DisplayName,'5 Whys')
                 Fill: =RGBA(0, 0, 0, 0)
-                Height: =70
+                Height: =138
                 MaxLength: =DataSourceInfo([@'Root Analysis'], DataSourceInfo.MaxLength, '5 Whys')
                 Required: =false
                 Update: =DataCardValue75.Value
-                Width: =775
+                Width: =979
                 X: =0
                 Y: =0
                 ZIndex: =3
@@ -1163,7 +1252,8 @@ Auditee_Screen As screen:
                     BorderStyle: =""
                     DisplayMode: =DisplayMode.Edit
                     FontColor: =
-                    Height: =22
+                    Height: =41
+                    Size: =24
                     Text: =Parent.DisplayName
                     Weight: ='TextCanvas.Weight'.Semibold
                     Width: =Parent.Width - 48
@@ -1177,17 +1267,18 @@ Auditee_Screen As screen:
                     Appearance: ="FilledDarker"
                     BasePaletteColor: =
                     BorderStyle: =""
+                    DelayOutput: =false
                     DisplayMode: =Parent.DisplayMode
                     FontColor: =
-                    Height: =32
+                    FontSize: =18
+                    Height: =62
                     Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
                     Required: =Parent.Required
-                    TriggerOutput: ="FocusOut"
                     ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
                     Value: =Parent.Default
                     Width: =Parent.Width - 48
                     X: =24
-                    Y: =DataCardKey75.Y + DataCardKey75.Height + 4
+                    Y: =51
                     ZIndex: =2
 
                 ErrorMessage75 As Text:
@@ -1228,7 +1319,7 @@ Auditee_Screen As screen:
                 Required: =false
                 Update: =DataCardValue76.Selected
                 Visible: =false
-                Width: =775
+                Width: =979
                 X: =0
                 Y: =1
                 ZIndex: =3
@@ -1297,7 +1388,7 @@ Auditee_Screen As screen:
         HoverColor: =RGBA(214, 221, 224, 1)
         HoverFill: =RGBA(0, 0, 0, 0)
         Icon: =Icon.BackArrow
-        OnSelect: =Navigate(Admin_Dashboard_Screen, Transition.Push)
+        OnSelect: =Back()
         PressedBorderColor: =RGBA(0, 0, 0, 0)
         PressedColor: =RGBA(16, 110, 190, 1)
         PressedFill: =RGBA(0, 0, 0, 0)

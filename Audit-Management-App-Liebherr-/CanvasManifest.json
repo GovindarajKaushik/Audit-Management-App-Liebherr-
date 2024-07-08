@@ -71,7 +71,6 @@
       "longlivingcache": false,
       "mobilenativerendering": false,
       "nativecdsexperimental": true,
-      "offlineprofilegenerationemitscolumns": false,
       "onegrid": false,
       "optimizedforteamsmeeting": false,
       "packagemodernruntime": false,
@@ -149,6 +148,7 @@
     "CreateAuditForm_Ex_Screen",
     "AuditManagement_Screen",
     "AnnualSchedule_Screen",
-    "CreateAnnualSchedule_Screen"
+    "CreateAnnualSchedule_Screen",
+    "Screen1"
   ]
 }

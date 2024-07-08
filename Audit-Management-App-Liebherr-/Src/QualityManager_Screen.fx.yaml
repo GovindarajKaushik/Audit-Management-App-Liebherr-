@@ -678,6 +678,7 @@ QualityManager_Screen As screen:
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
+            IconSize: ="Medium"
             Visible: =true
             Width: =55
             X: =1410
@@ -798,6 +799,7 @@ QualityManager_Screen As screen:
                 Appearance: ="FilledDarker"
                 BasePaletteColor: =
                 BorderStyle: =""
+                DelayOutput: =false
                 DisplayMode: =DisplayMode.Edit
                 FontColor: =
                 Height: =175
@@ -805,7 +807,6 @@ QualityManager_Screen As screen:
                 LayoutMinWidth: =320
                 Mode: ='TextInputCanvas.Mode'.Multiline
                 Placeholder: ="Please enter remarks"
-                TriggerOutput: ="FocusOut"
                 Value: =""
                 Width: =800
                 X: =0
@@ -915,20 +916,20 @@ QualityManager_Screen As screen:
                                 'Date of Review (Quality Manager)': Now(),
                                 Status: {Value: "Accepted by Quality Manager"},
                                 Reviewed_by_Aviation_Safety_Manager: {
-                                Claims: "i:0#.f|membership|govindaraj.kaushik@liebherr.com",
-                                Department: "Aerospace",
-                                JobTitle: "Internship",
-                                DisplayName: "Kaushik Govindaraj (LSI)",
-                                Email: "Govindaraj.Kaushik@liebherr.com",
-                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Govindaraj.Kaushik@liebherr.com"
+                                Claims: "i:0#.f|membership|david.tan@liebherr.com",
+                                Department: "QA",
+                                JobTitle: "Assistant Manager",
+                                DisplayName: "Tan David (LSI)",
+                                Email: "David.Tan@liebherr.com",
+                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=David.Tan@liebherr.com"
                             },
                             Reviewed_by_Accountable_Manager: {
-                                Claims: "i:0#.f|membership|govindaraj.kaushik@liebherr.com",
+                                Claims: "i:0#.f|membership|liyeng.ong@liebherr.com",
                                 Department: "Aerospace",
-                                JobTitle: "Internship",
-                                DisplayName: "Kaushik Govindaraj (LSI)",
-                                Email: "Govindaraj.Kaushik@liebherr.com",
-                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Govindaraj.Kaushik@liebherr.com"
+                                JobTitle: "Project Engineer (System)",
+                                DisplayName: "Ong Liyeng (LSI)",
+                                Email: "Liyeng.Ong@liebherr.com",
+                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Liyeng.Ong@liebherr.com"
                             }
                             }
                         ),
@@ -942,12 +943,12 @@ QualityManager_Screen As screen:
                                 'Date of Review (Quality Manager)': Now(),
                                 Status: {Value: "Accepted by Quality Manager"},
                                 Reviewed_by_Accountable_Manager: {
-                                Claims: "i:0#.f|membership|govindaraj.kaushik@liebherr.com",
+                                Claims: "i:0#.f|membership|liyeng.ong@liebherr.com",
                                 Department: "Aerospace",
-                                JobTitle: "Internship",
-                                DisplayName: "Kaushik Govindaraj (LSI)",
-                                Email: "Govindaraj.Kaushik@liebherr.com",
-                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Govindaraj.Kaushik@liebherr.com"
+                                JobTitle: "Project Engineer (System)",
+                                DisplayName: "Ong Liyeng (LSI)",
+                                Email: "Liyeng.Ong@liebherr.com",
+                                Picture: "https://liebherr.sharepoint.com/sites/LSIIHGJ/_layouts/15/UserPhoto.aspx?Size=L&AccountName=Liyeng.Ong@liebherr.com"
                             }
                             }
                         );
@@ -1054,6 +1055,7 @@ QualityManager_Screen As screen:
             Appearance: ="FilledDarker"
             BasePaletteColor: =
             BorderStyle: =""
+            DelayOutput: =false
             DisplayMode: =DisplayMode.Edit
             FontColor: =
             Height: =175
@@ -1061,7 +1063,6 @@ QualityManager_Screen As screen:
             LayoutMinWidth: =320
             Mode: ='TextInputCanvas.Mode'.Multiline
             Placeholder: ="Please enter remarks"
-            TriggerOutput: ="FocusOut"
             Value: =""
             Width: =750
             X: =0
@@ -1101,8 +1102,8 @@ QualityManager_Screen As screen:
                 OnSelect: |-
                     ='Rejected->SendAuditeeEmail'.Run(
                             RemarksInput_2.Value,
-                            Audit_Gallery.Selected.ID,
-                            Audit_Gallery.Selected.Requestor_or_Auditor.Email
+                            Audit_Gallery_3.Selected.ID,
+                            Audit_Gallery_3.Selected.Requestor_or_Auditor.Email
                         );
                     
                     
@@ -1112,12 +1113,12 @@ QualityManager_Screen As screen:
                             Defaults('Audit Remarks'),
                             {
                                 Title: randomNumber,
-                                Reviewer: Audit_Gallery.Selected.Reviewed_by_QualityManager,
+                                Reviewer: Audit_Gallery_3.Selected.Reviewed_by_QualityManager,
                                 Remarks: RemarksInput_2.Value,
                                 From: {
                                     '@odata.type': "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedReference",
-                                    Id: Audit_Gallery.Selected.ID,
-                                    Value: Audit_Gallery.Selected.Title
+                                    Id: Audit_Gallery_3.Selected.ID,
+                                    Value: Audit_Gallery_3.Selected.Title
                                 },
                                 Role: {Value: "Quality Manager"}
                             }
@@ -1125,7 +1126,7 @@ QualityManager_Screen As screen:
                     
                     Patch(
                         Audits,
-                        LookUp(Audits, ID = Audit_Gallery.Selected.ID),
+                        LookUp(Audits, ID = Audit_Gallery_3.Selected.ID),
                         {
                             Status: {Value: "Rejected by Quality Manager"},
                             'Date of Review (Quality Manager)': Blank()

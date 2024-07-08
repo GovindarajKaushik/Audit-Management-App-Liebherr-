@@ -715,6 +715,7 @@ DeptManager_Screen As screen:
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
+            IconSize: ="Medium"
             Visible: =true
             Width: =55
             X: =1410
@@ -835,6 +836,7 @@ DeptManager_Screen As screen:
             Appearance: ="FilledDarker"
             BasePaletteColor: =
             BorderStyle: =""
+            DelayOutput: =false
             DisplayMode: =DisplayMode.Edit
             FontColor: =
             Height: =175
@@ -842,7 +844,6 @@ DeptManager_Screen As screen:
             LayoutMinWidth: =320
             Mode: ='TextInputCanvas.Mode'.Multiline
             Placeholder: ="Please enter remarks"
-            TriggerOutput: ="FocusOut"
             Value: =""
             Width: =750
             X: =0

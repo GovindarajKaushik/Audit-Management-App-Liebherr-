@@ -113,6 +113,7 @@
             FontColor: =RGBA(0, 0, 0, 1)
             FontSize: =0
             Height: =40
+            IconSize: ="Medium"
             Visible: =true
             Width: =55
             X: =Label6_8.X+Label6_8.Width
