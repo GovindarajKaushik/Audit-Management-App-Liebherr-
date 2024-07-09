@@ -281,18 +281,85 @@ AuditeeStart_Screen As screen:
 
                 Container6_1 As groupContainer.manualLayoutContainer:
                     DropShadow: =DropShadow.Light
-                    Fill: |
+                    Fill: |-
                         =Switch(
                             ThisItem.Status.Value,
-                            "New", RGBA(173, 216, 230, 1),  // Light Blue
-                            "Accepted by Auditee", RGBA(144, 238, 144, 1),   // Light Green
-                            "Rejected by Auditee", RGBA(255, 182, 193, 1),   // Light Red
-                        
-                            "Accepted by Dept. Manager", RGBA(144, 238, 144, 1),   // Light Green
-                            "Rejected by Dept. Manager", RGBA(255, 182, 193, 1),   // Light Red
-                            "Waiting for Dept. Manager", RGBA(254, 239, 173, 1),   // Light Yellow
-                        
-                            RGBA(0, 0, 0, 0)  // Default color
+                            "New",
+                            RGBA(
+                                173,
+                                216,
+                                230,
+                                1
+                            ),// Light Blue
+                            "Accepted by Auditee",
+                            RGBA(
+                                144,
+                                238,
+                                144,
+                                1
+                            ),// Light Green
+                            "Rejected by Auditee",
+                            RGBA(
+                                255,
+                                182,
+                                193,
+                                1
+                            ),// Light Red
+                            "Accepted by Auditor(review)",
+                            RGBA(
+                                144,
+                                238,
+                                144,
+                                1
+                            ),// Light Green
+                            "Rejected by Auditor (review)",
+                            RGBA(
+                                255,
+                                182,
+                                193,
+                                1
+                            ),// Light Red
+                            "Rejected by Quality Manager",
+                            RGBA(
+                                255,
+                                182,
+                                193,
+                                1
+                            ),// Light Red
+                            "Accepted by Quality Manager",
+                            RGBA(
+                                144,
+                                238,
+                                144,
+                                1
+                            ),// Light Green
+                            "Accepted by Dept. Manager",
+                            RGBA(
+                                144,
+                                238,
+                                144,
+                                1
+                            ),// Light Green
+                            "Rejected by Dept. Manager",
+                            RGBA(
+                                255,
+                                182,
+                                193,
+                                1
+                            ),// Light Red
+                            "Waiting for Dept. Manager",
+                            RGBA(
+                                254,
+                                239,
+                                173,
+                                1
+                            ),// Light Yellow
+                            RGBA(
+                                0,
+                                0,
+                                0,
+                                0
+                            )// Default color
                         )
                     Height: =40
                     PaddingBottom: =5

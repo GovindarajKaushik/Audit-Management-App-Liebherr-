@@ -991,7 +991,7 @@
       "MetaDataIDKey": "",
       "Name": "btnLoadData",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3273,7 +3273,7 @@
       "MetaDataIDKey": "",
       "Name": "Container18",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3455,7 +3455,7 @@
       "MetaDataIDKey": "",
       "Name": "Container19",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3874,7 +3874,7 @@
       "MetaDataIDKey": "",
       "Name": "Gallery4",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9052,7 +9052,7 @@
       "MetaDataIDKey": "",
       "Name": "MainSectionContainer",
       "OptimizeForDevices": "Off",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

@@ -478,7 +478,9 @@ DeptManager_Screen As screen:
                 { Display: "All", Value: "All" },
                 { Display: "New", Value: "Waiting for Dept. Manager"},
                 { Display: "Approved", Value: "Accepted by Dept. Manager"},
-                { Display: "Rejected", Value: "Rejected by Dept. Manager"}
+                { Display: "Rejected", Value: "Rejected by Dept. Manager"},
+                { Display: "Rejected by Auditor (review)", Value: "Rejected by Auditor (review)"},
+                { Display: "Accepted by Auditor (review)", Value: "Accepted by Auditor (review)"}
             ]
         PaddingBottom: =5
         PaddingLeft: =12
